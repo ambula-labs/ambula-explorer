@@ -1,0 +1,10 @@
+.light {
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    right: -10%;
+    height: 100vh;
+    background: #ff06515e;
+    width: 80%;
+    filter: blur(300px);
+}
