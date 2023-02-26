@@ -71,6 +71,7 @@ function Landing() {
         </div>
       </div>
       <img src={lightVector} className="light" alt="Light vector" />
+      <img src={lightVector} className="light2" alt="Light vector" />
       <div id="screen2">
         &nbsp;
       </div>
