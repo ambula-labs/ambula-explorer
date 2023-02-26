@@ -9,6 +9,9 @@ import Twitter from '@/assets/twitter.svg';
 import Youtube from '@/assets/youtube.svg';
 import { motion } from "framer-motion";
 import TextAnim from '@/components/TextAnim/TextAnim';
+import { Canvas, useLoader } from '@react-three/fiber';
+import AmbulaModel from '../../components/Models/AmubulaModel';
+
 import './Landing.scss'
 
 function Landing() {
@@ -42,9 +45,9 @@ function Landing() {
             <FontAwesomeIcon icon={faArrowRight} />
           </motion.button>
         </div>
-        <div className='ambulaModel'>
-
-        </div>
+        <Canvas className='ambulaModel'>
+            <AmbulaModel/>
+        </Canvas>
       </div>
       <div className='learnMoreContainer'>
         <motion.div 

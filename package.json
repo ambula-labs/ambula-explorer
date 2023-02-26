@@ -12,6 +12,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-three/drei": "^9.56.27",
+    "@react-three/fiber": "^8.11.5",
     "framer-motion": "^10.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
