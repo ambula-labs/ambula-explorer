@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import lightVector from '@/assets/lightVector.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faAngleDown } from '@fortawesome/free-solid-svg-icons'
@@ -11,13 +12,8 @@ import TextAnim from '@/components/TextAnim/TextAnim';
 import './Landing.scss'
 
 function Landing() {
-  const handleClickScroll = () => {
-    const element = document.getElementById('screen2');
-    if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const screen2 = useRef(null);
+  const executeScroll = () => screen2.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });   
 
   return (
     <div className="Landing">
@@ -57,7 +53,7 @@ function Landing() {
             scale: 1.1,
           }}
           whileTap={{ scale: 0.9 }}
-          onClick={handleClickScroll}
+          onClick={executeScroll}
         >
           <span>Learn More</span>
           <FontAwesomeIcon className="angle" icon={faAngleDown} bounce/>
@@ -72,7 +68,7 @@ function Landing() {
       </div>
       <img src={lightVector} className="light" alt="Light vector" />
       <img src={lightVector} className="light2" alt="Light vector" />
-      <div id="screen2">
+      <div id="screen2" ref={screen2}>
         &nbsp;
       </div>
     </div>
