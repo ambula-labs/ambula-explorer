@@ -9,10 +9,10 @@ import Twitter from '@/assets/twitter.svg';
 import Youtube from '@/assets/youtube.svg';
 import { motion } from "framer-motion";
 import TextAnim from '@/components/TextAnim/TextAnim';
-import { Canvas, useLoader } from '@react-three/fiber';
-import AmbulaModel from '../../components/Models/AmubulaModel';
+import { Canvas } from '@react-three/fiber';
 
 import './Landing.scss'
+import AmbulaModel from '../../components/Models/AmubulaModel';
 
 function Landing() {
   const screen2 = useRef(null);
@@ -45,7 +45,14 @@ function Landing() {
             <FontAwesomeIcon icon={faArrowRight} />
           </motion.button>
         </div>
-        <Canvas className='ambulaModel'>
+        <Canvas flat
+        camera={ {
+            fov: 30,
+            near: 1,
+            far: 50,
+            position: [ 12, 2, 3 ]
+        } }
+        className='ambulaModel'>
             <AmbulaModel/>
         </Canvas>
       </div>
