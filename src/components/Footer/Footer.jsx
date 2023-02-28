@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from "react-router-dom";
 import AmbulaLogoLarge from '@/assets/AmbulaLogoLarge.svg';
-import lightVector from '@/assets/lightVector.svg';
 import Github from '@/assets/github.svg';
 import Discord from '@/assets/discord.svg';
 import Mail from '@/assets/telegram-alt.svg';
@@ -23,7 +22,13 @@ function Footer() {
             </div>
             <div className='inputContainer'>
                 <input type="text" placeholder='Your email Here' />
-                <span></span>	
+                <motion.i 
+                    class="fa-solid fa-arrow-right"
+                    whileHover={{
+                        scale: 1.1,
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                />
             </div>
         </div>
         <div className='bottomContainer'>
