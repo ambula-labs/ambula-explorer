@@ -6,7 +6,7 @@ import AmbulaLogoShort from "@/assets/AmbulaLogoSmall.svg";
 import EtherumLogo from "@/assets/eth-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp, faCaretDown, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import BlockTranscationCard from "../../components/BlockTransactionCard/BlockTransactionCard";
+import BlockList from "../../components/BlockList/BlockList";
 import "./Product.scss";
 
 function Landing() {
@@ -131,32 +131,9 @@ function Landing() {
 			<div className="blockTransactionContainer">
 				<div className="blockTransactionWrapper">
 					<div className="title">LATEST BLOCKS</div>
-					<div className="blockTransactionCards">
-						{(() => {
-							let block = [];
-							for (let i = 1; i <= 6; i++) {
-								block.push(<BlockTranscationCard key={i} type="block" />);
-							}
-							return block;
-						})()}
-					</div>
+					<BlockList type="block" />
 					<div className="seeAll">
 						View all <span>blocks</span>
-					</div>
-				</div>
-				<div className="blockTransactionWrapper">
-					<div className="title">LATEST TRANSACTION</div>
-					<div className="blockTransactionCards">
-						{(() => {
-							let block = [];
-							for (let i = 1; i <= 6; i++) {
-								block.push(<BlockTranscationCard key={i} type="transaction" />);
-							}
-							return block;
-						})()}
-					</div>
-					<div className="seeAll">
-						View all <span>transactions</span>
 					</div>
 				</div>
 			</div>
