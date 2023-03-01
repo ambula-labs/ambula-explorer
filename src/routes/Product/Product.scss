@@ -1,422 +1,430 @@
 .Product {
-    
-    padding: 0 5% 0 5%; 
-    .cryptoHeader {
-        height: 20vh;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        font-family: $poppins;
+	padding: 0 5% 0 5%;
+	.cryptoHeader {
+		height: 20vh;
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		font-family: $poppins;
 
-        .leftHeader {
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+		.leftHeader {
+			width: 60%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 
-            .titleHeader {
-                color: $text-grey;
-                font-size: 0.7rem;
-            }
+			.titleHeader {
+				color: $text-grey;
+				font-size: 0.7rem;
+			}
 
-            .informationHeader {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                height: 85%;
+			.informationHeader {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: 85%;
 
-                .ambulaLogoSmall {
-                    width: 11%;
-                    padding-bottom: 12%;
-                    background-color: $background-dark;
-                    padding: 3%;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: relative;
+				.ambulaLogoSmall {
+					width: 11%;
+					padding-bottom: 12%;
+					background-color: $background-dark;
+					padding: 3%;
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
 
-                    img {
-                        width: 75%;
-                    }
-                }
+					img {
+						width: 75%;
+					}
+				}
 
-                .informationContainer {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    margin-left: 20px;
-                    color : #fff;
-                    .informationTitle {
-                        font-size: 2rem;
-                        line-height: 1;
-                    }
-                    .informationContent {
-                        font-size: 3rem;
-                        line-height: 1;
-                        display: flex;
-                        flex-direction: row;
-                        gap: 3px;
+				.informationContainer {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					margin-left: 20px;
+					color: #fff;
+					.informationTitle {
+						font-size: 2rem;
+						line-height: 1;
+					}
+					.informationContent {
+						font-size: 3rem;
+						line-height: 1;
+						display: flex;
+						flex-direction: row;
+						gap: 3px;
 
-                        .progress {
-                            display: flex;
-                            gap: 2px;
-                            font-size: 1.1rem;
-                            color: #27C05C;
-                        }
-                    }
-                }
-            }
+						.progress {
+							display: flex;
+							gap: 2px;
+							font-size: 1.1rem;
+							color: #27c05c;
+						}
+					}
+				}
+			}
+		}
 
-        }
+		.rightHeader {
+			display: flex;
+			align-items: center;
+			justify-content: right;
+			width: 40%;
 
-        .rightHeader {
-            display: flex;
-            align-items: center;
-            justify-content: right;
-            width: 40%;
+			.pub {
+				width: 70%;
+				height: 70%;
+				background-color: #d9d9d9;
+				border-radius: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+				font-weight: 500;
+				text-align: center;
+			}
+		}
+	}
 
-            .pub {
-                width: 70%;
-                height: 70%;
-                background-color: #D9D9D9;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                font-weight: 500;
-                text-align: center;
-            }
-        }
+	.cryptoStats {
+		height: 60vh;
+		z-index: 5;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 
-    }
+		.statsBar {
+			height: 16%;
+			width: 96%;
+			padding: 1% 2%;
+			position: relative;
+			border-radius: 25px;
+			border: 2px solid transparent;
+			background: $gradient-white-red border-box;
+			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+		}
 
-    .cryptoStats {
-        height: 60vh;
-        z-index: 5;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+		.statsBarBackground {
+			position: absolute;
+			height: 16%;
+			font-family: $poppins;
+			width: 96%;
+			padding: 1% 2%;
+			border: 2px solid transparent;
+			border-radius: 25px;
+			background: linear-gradient(
+				360deg,
+				rgba(255, 255, 255, 0.2) 0%,
+				rgba(255, 255, 255, 0.1) 99.99%,
+				rgba(255, 255, 255, 0.25) 100%,
+				rgba(17, 17, 17, 0.25) 100%,
+				#ffffff 100%
+			);
+			backdrop-filter: blur(20px);
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
 
-        .statsBar {
-            height: 16%;
-            width: 96%;
-            padding: 1% 2%;
-            position: relative;
-            border-radius: 25px;
-            border: 2px solid transparent; 
-            background: $gradient-white-red border-box; 
-            -webkit-mask:
-                linear-gradient(#fff 0 0) padding-box, 
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-                mask-composite: exclude;
-        }
+			.statsContainer {
+				color: white;
 
-        .statsBarBackground {
-            position: absolute;
-            height: 16%;
-            font-family: $poppins;
-            width: 96%;
-            padding: 1% 2%;
-            border: 2px solid transparent; 
-            border-radius: 25px;
-            background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #FFFFFF 100%);
-            backdrop-filter: blur(20px);
-            align-items: center;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+				.statsTitle {
+					font-size: 0.8rem;
+				}
 
-            .statsContainer {
-                color: white;
+				.statsContent {
+					font-size: 1.3rem;
+					font-weight: 500;
 
-                .statsTitle {
-                    font-size: .8rem;
-                }
+					span {
+						color: $ambula-red;
+					}
+				}
 
-                .statsContent {
-                    font-size: 1.3rem;
-                    font-weight: 500;
+				.statsProgress {
+					font-size: 0.9rem;
+				}
 
-                    span {
-                        color: $ambula-red;
-                    }
-                }
+				.up {
+					color: #27c05c;
+				}
 
-                .statsProgress {
-                    font-size: .9rem;
-                }
+				.down {
+					color: #eb3d3d;
+				}
 
-                .up {
-                    color: #27C05C; 
-                }
+				.amb {
+					color: $ambula-red;
+				}
+			}
+		}
 
-                .down {
-                    color: #EB3D3D;
-                }
+		.statsBottom {
+			height: 75%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			font-family: $poppins;
+			gap: 20px;
 
-                .amb {
-                    color: $ambula-red;
-                }
-            }
-        }
+			.statsOrder {
+				width: 25%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
 
-        .statsBottom {
-            height: 75%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-family: $poppins;
-            gap: 20px;
+				.orderTitle {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					font-size: 1rem;
+					color: white;
 
-            .statsOrder {
-                width: 25%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
+					span {
+						color: $text-grey;
+						font-size: 0.7rem;
+					}
+				}
 
-                .orderTitle {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    font-size: 1rem;
-                    color: white;
+				.hr {
+					height: 2px;
+					width: 100%;
+					border: 50px;
+					background-color: $text-grey;
+				}
 
-                    span {
-                        color: $text-grey;
-                        font-size: .7rem;
-                    }
-                }
+				.tradingContainer {
+					display: flex;
+					flex-direction: column;
+					color: white;
+					gap: 5px;
+					height: 45%;
+					font-size: 0.9rem;
 
-                .hr {
-                    height: 2px;
-                    width: 100%;
-                    border: 50px;
-                    background-color: $text-grey;
-                }
+					.orderCardContainer {
+						display: flex;
+						flex-direction: column;
+						gap: 10px;
+						height: 100%;
 
-                .tradingContainer {
-                    display: flex;
-                    flex-direction: column;
-                    color: white;
-                    gap: 5px;
-                    height: 45%;
-                    font-size: .9rem;
+						.orderCard {
+							background: #d9d9d9;
+							border-radius: 10px;
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							height: 35%;
+							padding: 1%;
 
-                    .orderCardContainer {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px;
-                        height: 100%;
+							.orderCardLeft {
+								display: flex;
+								flex-direction: row;
+								width: 70%;
+								gap: 5px;
+								font-family: $inter;
 
-                        .orderCard {
-                            background: #D9D9D9;
-                            border-radius: 10px;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            height: 35%;
-                            padding: 1%;
+								.orderCardImage {
+									height: 100%;
+									padding-left: 30%;
+									position: relative;
+									background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #111111;
+									border-radius: 10px;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									overflow: hidden;
 
-                            .orderCardLeft {
-                                display: flex;
-                                flex-direction: row;
-                                width: 70%;
-                                gap: 5px;
-                                font-family: $inter;
+									& > * {
+										position: absolute;
+										top: 50%;
+										left: 50%;
+										transform: translate(-50%, -50%);
+									}
+									img {
+										height: 70%;
+										z-index: 3;
+									}
 
-                                .orderCardImage {
-                                    height: 100%;
-                                    padding-left: 30%; 
-                                    position: relative;
-                                    background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #111111;
-                                    border-radius: 10px;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    overflow: hidden;
+									.lightCard {
+										position: absolute;
+										z-index: 2;
+										top: 30%;
+										right: 50%;
+										height: 100vh;
+										background: #9807f8;
+										transform: none;
+										filter: blur(30px);
+									}
 
-                                    & > * {
-                                        position: absolute;
-                                        top: 50%;
-                                        left: 50%;
-                                        transform: translate(-50%, -50%);
-                                    }
-                                    img {
-                                        height: 70%;
-                                        z-index: 3;
-                                    }
+									.amb {
+										background: #ff0651ee;
+									}
+								}
 
-                                    .lightCard {
-                                        position: absolute;
-                                        z-index: 2;
-                                        top: 30%;
-                                        right: 50%;
-                                        height: 100vh;
-                                        background: #9807f8;
-                                        transform: none;
-                                        filter: blur(30px);
-                                    }
+								.orderInfos {
+									display: flex;
+									justify-content: center;
+									flex-direction: column;
 
-                                    .amb {
-                                        background: #ff0651ee;
-                                    }
-                                }
+									.orderType {
+										color: $background-black;
+										font-size: 0.7rem;
+										font-weight: 400;
+									}
 
-                                .orderInfos {
-                                    display: flex;
-                                    justify-content: center;
-                                    flex-direction: column;
+									.orderName {
+										color: #dd1cfc;
+										font-weight: 700;
+									}
 
-                                    .orderType {
-                                        color: $background-black;
-                                        font-size: .7rem;
-                                        font-weight: 400;
-                                    }
+									.amb {
+										background: linear-gradient(180deg, #ff0651 0%, #ec1093 100%);
+										-webkit-background-clip: text;
+										-webkit-text-fill-color: transparent;
+									}
+								}
+							}
 
-                                    .orderName {
-                                        color: #DD1CFC;
-                                        font-weight: 700;
-                                    }
+							.orderCardRight {
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								padding-right: 5%;
+								text-align: end;
+								gap: 1px;
 
-                                    .amb {
-                                        background: linear-gradient(180deg, #FF0651 0%, #EC1093 100%);
-                                        -webkit-background-clip: text;
-                                        -webkit-text-fill-color: transparent;
-                                    }
-                                }
-                            }
+								.orderNumber {
+									font-size: 1.2rem;
+									line-height: 1;
+									color: $background-black;
+									font-weight: 500;
+								}
 
-                            .orderCardRight {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: center;
-                                padding-right: 5%;
-                                text-align: end;
-                                gap: 1px;
+								.orderNumberDollar {
+									font-size: 0.6rem;
+									line-height: 1;
+									color: $grey;
+								}
+							}
+						}
+					}
+				}
+			}
 
-                                .orderNumber {
-                                    font-size: 1.2rem;
-                                    line-height: 1;
-                                    color: $background-black;
-                                    font-weight: 500;
-                                }
+			.statsChart {
+				width: 75%;
+				position: relative;
 
-                                .orderNumberDollar {
-                                    font-size: 0.6rem;
-                                    line-height: 1;
-                                    color: $grey;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+				.statsChartBorder {
+					height: 100%;
+					width: 100%;
+					z-index: 6;
+					position: relative;
+					border-radius: 25px;
+					border: 2px solid transparent;
+					background: $gradient-white-red border-box;
+					-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+					-webkit-mask-composite: xor;
+					mask-composite: exclude;
+				}
 
-            .statsChart {
-                width: 75%;
-                position: relative;
+				.statsChartBackground {
+					position: absolute;
+					height: 96%;
+					font-family: $poppins;
+					width: 96%;
+					padding: 1% 2%;
+					z-index: 5;
+					border: 2px solid transparent;
+					border-radius: 25px;
+					background: linear-gradient(
+						360deg,
+						rgba(255, 255, 255, 0.2) 0%,
+						rgba(255, 255, 255, 0.1) 99.99%,
+						rgba(255, 255, 255, 0.25) 100%,
+						rgba(17, 17, 17, 0.25) 100%,
+						#ffffff 100%
+					);
+					backdrop-filter: blur(20px);
+					align-items: center;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+				}
+			}
+		}
+	}
 
-                .statsChartBorder {
-                    height: 100%;
-                    width: 100%;
-                    z-index: 6;
-                    position: relative;
-                    border-radius: 25px;
-                    border: 2px solid transparent; 
-                    background: $gradient-white-red border-box; 
-                    -webkit-mask:
-                        linear-gradient(#fff 0 0) padding-box, 
-                        linear-gradient(#fff 0 0);
-                    -webkit-mask-composite: xor;
-                        mask-composite: exclude;
-                }
+	.blockTransactionContainer {
+		height: 80vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		margin-top: 30px;
+		margin-bottom: 50px;
 
-                .statsChartBackground {
-                    position: absolute;
-                    height: 96%;
-                    font-family: $poppins;
-                    width: 96%;
-                    padding: 1% 2%;
-                    z-index: 5;
-                    border: 2px solid transparent; 
-                    border-radius: 25px;
-                    background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #FFFFFF 100%);
-                    backdrop-filter: blur(20px);
-                    align-items: center;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                }
-            }
-        }
+		.blockTransactionWrapper {
+			width: 48%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
 
+			.title {
+				height: 5%;
+				display: flex;
+				align-items: center;
+				font-family: $inter;
+				font-weight: 700;
+				color: white;
+				font-size: 1.3rem;
+			}
+			.blockTransactionCards {
+				height: 90%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+			}
 
-    }
+			.seeAll {
+				height: 5%;
+				text-align: center;
+				font-family: $inter;
+				font-weight: 700;
+				color: white;
+				span {
+					color: $ambula-red;
+				}
+			}
+		}
+	}
 
-    .blockTransactionContainer {
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        margin-top: 30px;
-        margin-bottom: 50px;
-
-        .blockTransactionWrapper {
-            width: 48%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-
-            .title {
-                height: 5%;
-                display: flex;
-                align-items: center;
-                font-family: $inter;
-                font-weight: 700;
-                color: white;
-                font-size: 1.3rem;
-            }
-            .blockTransactionCards {
-                height: 90%;
-            }
-
-            .seeAll {
-                height: 5%;
-                text-align: center;
-                font-family: $inter;
-                font-weight: 700;
-                color: white;
-                span {
-                    color: $ambula-red;
-                }
-            }
-        }
-    }
-
-    .light {
-        position: absolute;
-        z-index: 2;
-        top: 10%;
-        right: -10%;
-        height: 100vh;
-        background: #ff06515e;
-        width: 80%;
-        filter: blur(300px);
-    }
+	.light {
+		position: absolute;
+		z-index: 2;
+		top: 10%;
+		right: -10%;
+		height: 100vh;
+		background: #ff06515e;
+		width: 80%;
+		filter: blur(300px);
+	}
 }
 
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    .backdrop-blur {
-      background-color: rgba(255, 255, 255, .5);
-      -webkit-backdrop-filter: blur(2em);
-      backdrop-filter: blur(2em);
-    }
-  }
+	.backdrop-blur {
+		background-color: rgba(255, 255, 255, 0.5);
+		-webkit-backdrop-filter: blur(2em);
+		backdrop-filter: blur(2em);
+	}
+}

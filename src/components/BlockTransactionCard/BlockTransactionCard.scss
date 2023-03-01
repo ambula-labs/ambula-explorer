@@ -1,99 +1,150 @@
 .blockTransactionCard {
-    position: relative;
-    height: 13%;
-    .blockTransactionCardBackground {
-        position: absolute;
-        height: 92%;
-        font-family: $inter;
-        width: 96%;
-        padding: 1% 2%;
-        border: 2px solid transparent; 
-        border-radius: 10px;
-        background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #FFFFFF 100%);
-        backdrop-filter: blur(20px);
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+	position: relative;
+	height: 13%;
+	.blockTransactionCardBackground {
+		position: absolute;
+		height: 92%;
+		font-family: $inter;
+		width: 96%;
+		padding: 1% 2%;
+		border: 2px solid transparent;
+		border-radius: 10px;
+		background: linear-gradient(
+			360deg,
+			rgba(255, 255, 255, 0.2) 0%,
+			rgba(255, 255, 255, 0.1) 99.99%,
+			rgba(255, 255, 255, 0.25) 100%,
+			rgba(17, 17, 17, 0.25) 100%,
+			#ffffff 100%
+		);
+		backdrop-filter: blur(20px);
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 
-        .left {
-            display: flex;
-            flex-direction: row;
-            width: 25%;
-            background: blue;
-            gap: 5px;
+		.left {
+			display: flex;
+			flex-direction: row;
+			width: 40%;
+			height: 100%;
+			gap: 5px;
+			margin-right: 10px;
 
-            .type {
-                width: 75%;
-                background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #FFFFFF 100%);
-                backdrop-filter: blur(20px);
-                border-radius: 10px;
-                display: flex;
-                text-align: center;
-                justify-content: center;
-                align-items: center;
+			.type {
+				width: 45%;
+				background: linear-gradient(
+					360deg,
+					rgba(255, 255, 255, 0.2) 0%,
+					rgba(255, 255, 255, 0.1) 99.99%,
+					rgba(255, 255, 255, 0.25) 100%,
+					rgba(17, 17, 17, 0.25) 100%,
+					#ffffff 100%
+				);
+				backdrop-filter: blur(20px);
+				border-radius: 10px;
+				display: flex;
+				text-align: center;
+				justify-content: center;
+				align-items: center;
+			}
 
-            }
-        }
+			.infos {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.infosTitle {
+					color: #fff;
+					font-weight: 700;
+					font-size: 1.2rem;
+				}
+				.infosDate {
+					font-size: 0.8rem;
+					color: $grey;
+				}
+			}
+		}
 
-        .center {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-            .title {
-                font-size: 1.2rem;
-            }
+		.center {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
-            .infos {
-                font-size: 0.8rem;
-                color: $grey;
+			.title {
+				font-size: 1.2rem;
+			}
 
-                span {
-                    color: $ambula-red;
-                    font-weight: 700;
-                    font-size: 0.9rem;
-                }
-            }
+			.infos {
+				font-size: 0.8rem;
+				color: $grey;
 
-        }
+				span {
+					color: $ambula-red;
+					font-weight: 700;
+					font-size: 0.9rem;
+				}
+			}
 
-        .right {
-            width: 25%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: end;
-            height: 100%;
-            
-            img {
-                height: 40%;
-            }
+			.from {
+				text-align: left;
+				color: white;
+				font-weight: 700;
+				font-size: 1.1rem;
+				width: 100%;
 
-            span {
-                text-align: end;
-                width: 45%;
-                color: white;
-                font-weight: 700;
-                font-size: 1.1rem;
-            }
+				span {
+					color: $ambula-red;
+					font-size: 0.9rem;
+				}
+			}
 
-        }
-    }
+			.to {
+				text-align: left;
+				color: white;
+				font-weight: 700;
+				font-size: 1.1rem;
+				width: 100%;
 
-    .blockTransactionCardBorder {
-        height: 92%;
-        width: 96%;
-        padding: 1% 2%;
-        position: relative;
-        border-radius: 10px;
-        border: 2px solid transparent; 
-        background: $gradient-white-red border-box; 
-        -webkit-mask:
-            linear-gradient(#fff 0 0) padding-box, 
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    }
+				span {
+					color: $ambula-red;
+					font-size: 0.9rem;
+				}
+			}
+		}
+
+		.right {
+			width: 25%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: end;
+			height: 100%;
+
+			img {
+				height: 40%;
+			}
+
+			span {
+				text-align: end;
+				width: 45%;
+				color: white;
+				font-weight: 700;
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+	.blockTransactionCardBorder {
+		height: 92%;
+		width: 96%;
+		padding: 1% 2%;
+		position: relative;
+		border-radius: 10px;
+		border: 2px solid transparent;
+		background: $gradient-white-red border-box;
+		-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+	}
 }
