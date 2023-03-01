@@ -100,10 +100,6 @@
         flex-direction: column;
         justify-content: space-between;
 
-        .backdrop-blur {
-            background-color: rgba(255, 255, 255, .9);
-          }
-
         .statsBar {
             height: 16%;
             width: 96%;
@@ -178,6 +174,10 @@
 
             .statsOrder {
                 width: 25%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
 
                 .orderTitle {
                     display: flex;
@@ -198,6 +198,123 @@
                     width: 100%;
                     border: 50px;
                     background-color: $text-grey;
+                }
+
+                .tradingContainer {
+                    display: flex;
+                    flex-direction: column;
+                    color: white;
+                    gap: 5px;
+                    height: 45%;
+                    font-size: .9rem;
+
+                    .orderCardContainer {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        height: 100%;
+
+                        .orderCard {
+                            background: #D9D9D9;
+                            border-radius: 10px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            height: 35%;
+                            padding: 1%;
+
+                            .orderCardLeft {
+                                display: flex;
+                                flex-direction: row;
+                                width: 70%;
+                                gap: 5px;
+                                font-family: $inter;
+
+                                .orderCardImage {
+                                    height: 100%;
+                                    padding-left: 30%; 
+                                    position: relative;
+                                    background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #111111;
+                                    border-radius: 10px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    overflow: hidden;
+
+                                    & > * {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                    }
+                                    img {
+                                        height: 70%;
+                                        z-index: 3;
+                                    }
+
+                                    .lightCard {
+                                        position: absolute;
+                                        z-index: 2;
+                                        top: 30%;
+                                        right: 50%;
+                                        height: 100vh;
+                                        background: #9807f8;
+                                        transform: none;
+                                        filter: blur(30px);
+                                    }
+
+                                    .amb {
+                                        background: #ff0651ee;
+                                    }
+                                }
+
+                                .orderInfos {
+                                    display: flex;
+                                    justify-content: center;
+                                    flex-direction: column;
+
+                                    .orderType {
+                                        color: $background-black;
+                                        font-size: .7rem;
+                                        font-weight: 400;
+                                    }
+
+                                    .orderName {
+                                        color: #DD1CFC;
+                                        font-weight: 700;
+                                    }
+
+                                    .amb {
+                                        background: linear-gradient(180deg, #FF0651 0%, #EC1093 100%);
+                                        -webkit-background-clip: text;
+                                        -webkit-text-fill-color: transparent;
+                                    }
+                                }
+                            }
+
+                            .orderCardRight {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                padding-right: 5%;
+                                text-align: end;
+                                gap: 1px;
+
+                                .orderNumber {
+                                    font-size: 1.2rem;
+                                    line-height: 1;
+                                    color: $background-black;
+                                    font-weight: 500;
+                                }
+
+                                .orderNumberDollar {
+                                    font-size: 0.6rem;
+                                    line-height: 1;
+                                    color: $grey;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -240,6 +357,48 @@
         }
 
 
+    }
+
+    .blockTransactionContainer {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 50px;
+
+        .blockTransactionWrapper {
+            width: 48%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .title {
+                height: 5%;
+                display: flex;
+                align-items: center;
+                font-family: $inter;
+                font-weight: 700;
+                color: white;
+                font-size: 1.3rem;
+            }
+            .blockTransactionCards {
+                height: 90%;
+            }
+
+            .seeAll {
+                height: 5%;
+                text-align: center;
+                font-family: $inter;
+                font-weight: 700;
+                color: white;
+                span {
+                    color: $ambula-red;
+                }
+            }
+        }
     }
 
     .light {
