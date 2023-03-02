@@ -5,11 +5,20 @@ import violetLightVector from "@/assets/violetLightVector.svg";
 import AmbulaLogoShort from "@/assets/AmbulaLogoSmall.svg";
 import EtherumLogo from "@/assets/eth-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretUp, faCaretDown, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { faCaretUp, faCaretDown, faCircleInfo, faAnglesDown } from "@fortawesome/free-solid-svg-icons";
+import { motion } from 'framer-motion';
+import Toggle from 'react-toggle';
 import BlockList from "../../components/BlockList/BlockList";
 import "./Product.scss";
 
-function Landing() {
+function Product() {
+  const [isCurrentMarketPrice, setIsCurrentMarketPrice] = useState(true);
+
+  function toggleMarketPrice() {
+    console.log(isCurrentMarketPrice);
+    setIsCurrentMarketPrice(!isCurrentMarketPrice);
+  }
+
 	return (
 		<div className="Product">
 			<div className="cryptoHeader">
@@ -120,7 +129,34 @@ function Landing() {
 									</div>
 								</div>
 							</div>
+              <div className="marketPriceContainer">
+                <div className="marketPriceCard">
+                  Market price: 
+                  <span>2.91053 ETH</span>
+                  <img src={lightVector} className="marketPriceLight" alt="Light vector" />
+                </div>
+                <div className="marketPriceSelect">
+                <Toggle
+                  id='market-status'
+                  defaultChecked={isCurrentMarketPrice}
+                  onChange={toggleMarketPrice} /> 
+                <label htmlFor='market-status'>Set current market price</label>
+                </div>
+              </div>
+              <div className="totalFeeContainer">
+                Total fee: 
+                <div className="fee">0,52 AMB <motion.div whileHover={{scale: 1.1,}} whileTap={{ scale: 0.9 }}><FontAwesomeIcon icon={faAnglesDown} className='faAnglesDown' /></motion.div></div>
+              </div>
 						</div>
+            <motion.button
+                className='createOrderBtn'   
+                whileHover={{
+                  scale: 1.1,
+                }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Create Order
+              </motion.button>
 					</div>
 					<div className="statsChart">
 						<div className="statsChartBackground"></div>
@@ -142,4 +178,4 @@ function Landing() {
 	);
 }
 
-export default Landing;
+export default Product;
