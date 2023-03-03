@@ -101,8 +101,33 @@ function Landing() {
 			</div>
 			<img src={lightVector} className="light" alt="Light vector" />
 			<img src={lightVector} className="light2" alt="Light vector" />
-			<div id="screen2" ref={screen2}>
-				&nbsp;
+			<div class="screen screen2" ref={screen2}>
+				<div className="titleScreen">
+					The <span>Environmental•Future</span> is now
+				</div>
+			</div>
+			<div class="screen screen3">
+				<div className="titleScreen">
+					<div><span>Monitoring</span></div>
+					<div>Real-Time Transaction</div>
+				</div>
+			</div>
+			<div class="screen screen4">
+				<div className="titleScreen">
+					<div>Transaction Enabled</div>
+					<div><span>Wallet</span></div>
+				</div>
+			</div>
+			<div class="screen screen5">
+				<div className="titleScreen">
+					<div>Take part of our <span>fast</span></div>
+					<div><span>growing</span> community</div>
+				</div>
+				<div className="growingFastContainer">
+					<div className="growingFastCard"><img src={lightVector} className="growingFastLight" alt="Light vector" /></div>
+					<div className="growingFastCard big"><img src={lightVector} className="growingFastLight" alt="Light vector" /></div>
+					<div className="growingFastCard"><img src={lightVector} className="growingFastLight" alt="Light vector" /></div>
+				</div>
 			</div>
 		</div>
 	);
