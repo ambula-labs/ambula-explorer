@@ -15,7 +15,7 @@ $gradient-white-red : linear-gradient(94.58deg, #FFFFFF 15.65%, rgba(255, 6, 81,
 /* Font styles */
 @font-face {
     font-family: 'Greycliff';
-    src: url("@/assets/fonts/") format('opentype');
+    src: url("@/assets/fonts/greycliffcf-extrabold") format('opentype');
 }
 
 $greycliff: 'Greycliff', sans-serif;
