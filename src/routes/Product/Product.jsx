@@ -15,9 +15,12 @@ function Product() {
   const [isCurrentMarketPrice, setIsCurrentMarketPrice] = useState(true);
 
   function toggleMarketPrice() {
-    console.log(isCurrentMarketPrice);
     setIsCurrentMarketPrice(!isCurrentMarketPrice);
   }
+
+  useEffect(() => {
+    console.log(isCurrentMarketPrice);
+  }, [isCurrentMarketPrice]);
 
 	return (
 		<div className="Product">
