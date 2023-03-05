@@ -152,6 +152,7 @@
 	.screen {
 		height: 100vh;
 		display: flex;
+		padding: 0% 5%;
 
 		.titleScreen {
 			font-family: $poppins;
@@ -183,14 +184,43 @@
 
 	.screen3 {
 		flex-direction: row;
+		position: relative;
+
+		.titleScreen {
+			margin-top: 26%;
+		}
+
+		.transactionImage {
+			z-index: 5;
+			position: absolute;
+			top: 5%;
+			right: -5%;
+		}
+
+		.light3 {
+			position: absolute;
+			z-index: 2;
+			right: -25%;
+			top: 10%;
+			height: 100vh;
+			background: #ff06515e;
+			width: 100%;
+			filter: blur(300px);
+		}
+	}
+
+	.screen4 {
+		flex-direction: row;
 		align-items: center;
 		justify-content: flex-end;
 		text-align: end;
 	}
 
+
 	.screen5 {
 		flex-direction: column;
 		align-items: center;
+		margin-bottom: -5%;
 
 		.titleScreen {
 			margin-top: 5%;
@@ -206,7 +236,7 @@
 
 			.growingFastCard {
 				background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #222222;
-				width: 25%;
+				width: 28%;
 				height: 45%;
 				border-radius: 50px;
 				position: relative;

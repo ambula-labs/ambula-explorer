@@ -18,7 +18,7 @@ function Footer() {
 				<div className="inputContainer">
 					<input type="text" placeholder="Your email Here" />
 					<motion.i
-						className="fa-solid fa-arrow-right"
+						class="fa-solid fa-arrow-right"
 						whileHover={{
 							scale: 1.1,
 						}}
