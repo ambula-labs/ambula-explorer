@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import lightVector from "@/assets/lightVector.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faAngleDown } from "@fortawesome/free-solid-svg-icons";
@@ -7,14 +7,62 @@ import Discord from "@/assets/discord.svg";
 import Mail from "@/assets/telegram-alt.svg";
 import Twitter from "@/assets/twitter.svg";
 import Youtube from "@/assets/youtube.svg";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { Parallax } from 'react-scroll-parallax';
 import TextAnim from "@/components/TextAnim/TextAnim";
 import { Canvas } from "@react-three/fiber";
-
+import { useInView } from "react-intersection-observer";
+import TransactionBase from "@/assets/TransactionBase.png";
+import TransactionCreditCard from "@/assets/TransactionCreditCard.png";
+import TransactionPhone from "@/assets/TransactionPhone.png";
 import "./Landing.scss";
 import AmbulaModel from "../../components/Models/AmubulaModel";
 
+
 function Landing() {
+	const ctrls = useAnimation();
+
+	//Animation utilisée pour nos Cards présentes dans la liste fast growing community
+	const growingFastContainerVariants = {
+		hidden: {
+		  opacity: 0
+		},
+		visible: {
+		  opacity: 1,
+		  transition: {
+			staggerChildren: 0.1,
+            delayChildren: 0.5,
+		  }
+		}
+	};
+
+	const growingFastCardAnimation = {
+		hidden: { scale: 0, opacity: 0},
+		visible: { 
+			scale: 1, 
+			opacity: 1,
+			transition: {
+				duration: 1,
+				ease: [0.2, 0.65, 0.3, 0.9],
+			  }
+		}
+	}
+
+	const [growingFastRef, inView] = useInView( {
+		threshold: .2,
+		triggerOnce: false,
+	});
+	  
+	useEffect(() => {
+	if (inView) {
+		ctrls.start("visible");
+	}
+	if (!inView) {
+		ctrls.start("hidden");
+	}
+	console.log(inView);
+	}, [ctrls, inView]);
+
 	const screen2 = useRef(null);
 	const executeScroll = () =>
 		screen2.current.scrollIntoView({
@@ -101,33 +149,43 @@ function Landing() {
 			</div>
 			<img src={lightVector} className="light" alt="Light vector" />
 			<img src={lightVector} className="light2" alt="Light vector" />
-			<div class="screen screen2" ref={screen2}>
+			<div className="screen screen2" ref={screen2}>
 				<div className="titleScreen">
 					The <span>Environmental•Future</span> is now
 				</div>
 			</div>
-			<div class="screen screen3">
-				<div className="titleScreen">
+			<div className="screen screen3">
+				<Parallax speed={50} className="titleScreen">
 					<div><span>Monitoring</span></div>
 					<div>Real-Time Transaction</div>
-				</div>
+				</Parallax>
+				<Parallax speed={25} className="transactionImage">
+					<img src={TransactionBase} />
+				</Parallax>
+				<Parallax speed={30} className="transactionImage">
+					<img src={TransactionPhone} />
+				</Parallax>
+				<Parallax speed={35} className="transactionImage">
+					<img src={TransactionCreditCard} />
+				</Parallax>
+				<img src={lightVector} className="light3" alt="Light vector" />
 			</div>
-			<div class="screen screen4">
+			<div className="screen screen4">
 				<div className="titleScreen">
 					<div>Transaction Enabled</div>
 					<div><span>Wallet</span></div>
 				</div>
 			</div>
-			<div class="screen screen5">
-				<div className="titleScreen">
+			<div className="screen screen5" ref={growingFastRef}>
+				<div className="titleScreen" >
 					<div>Take part of our <span>fast</span></div>
 					<div><span>growing</span> community</div>
 				</div>
-				<div className="growingFastContainer">
-					<div className="growingFastCard"><img src={lightVector} className="growingFastLight" alt="Light vector" /></div>
-					<div className="growingFastCard big"><img src={lightVector} className="growingFastLight" alt="Light vector" /></div>
-					<div className="growingFastCard"><img src={lightVector} className="growingFastLight" alt="Light vector" /></div>
-				</div>
+				<motion.div animate={ctrls} className="growingFastContainer" variants={growingFastContainerVariants}>
+						<motion.div whileHover={{scale: 1.1,}} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard" layout><img src={lightVector} className="growingFastLight" alt="Light vector" /></motion.div>
+						<motion.div whileHover={{scale: 1.1,}} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard big" layout><img src={lightVector} className="growingFastLight" alt="Light vector" /></motion.div>
+						<motion.div whileHover={{scale: 1.1,}} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard" layout><img src={lightVector} className="growingFastLight" alt="Light vector" /></motion.div>
+				</motion.div>
 			</div>
 		</div>
 	);
