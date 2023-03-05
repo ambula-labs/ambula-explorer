@@ -12,9 +12,9 @@ import { Parallax } from 'react-scroll-parallax';
 import TextAnim from "@/components/TextAnim/TextAnim";
 import { Canvas } from "@react-three/fiber";
 import { useInView } from "react-intersection-observer";
-import TransactionBase from "@/assets/TransactionBase.png";
-import TransactionCreditCard from "@/assets/TransactionCreditCard.png";
-import TransactionPhone from "@/assets/TransactionPhone.png";
+import TransactionBase from "@/assets/TransactionBaseRose.png";
+import TransactionCreditCard from "@/assets/TransactionCreditCardRose.png";
+import TransactionPhone from "@/assets/TransactionPhoneRose.png";
 import "./Landing.scss";
 import AmbulaModel from "../../components/Models/AmubulaModel";
 
