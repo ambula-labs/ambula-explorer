@@ -1,0 +1,49 @@
+.About {
+	padding: 0 2%;
+	position: relative;
+	.light {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		right: -10%;
+		height: 100vh;
+		background: #ff06515e;
+		width: 80%;
+		filter: blur(300px);
+	}
+
+	.light2 {
+		position: absolute;
+		z-index: 2;
+		bottom: -120vh;
+		right: -20%;
+		height: 100vh;
+		background: #ff06515e;
+		width: 80%;
+		filter: blur(300px);
+	}
+
+	.aboutContainer {
+		height: 78vh;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+    }
+
+    .roadmapContainer {
+		height: 78vh;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+    }
+
+    .buyContainer {
+		height: 78vh;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+    }
+}
