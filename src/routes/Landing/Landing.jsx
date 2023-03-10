@@ -8,6 +8,7 @@ import Mail from "@/assets/telegram-alt.svg";
 import Twitter from "@/assets/twitter.svg";
 import Youtube from "@/assets/youtube.svg";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import ReactPageScroller, { SectionContainer } from 'react-page-scroller';
 import { Parallax } from 'react-scroll-parallax';
 import TextAnim from "@/components/TextAnim/TextAnim";
 import { Canvas } from "@react-three/fiber";
