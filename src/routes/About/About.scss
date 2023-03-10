@@ -1,6 +1,7 @@
 .About {
 	padding: 0 2%;
 	position: relative;
+	font-size: 1px;
 	.light {
 		position: absolute;
 		z-index: 2;
@@ -162,7 +163,7 @@
 				font-family: $poppins;
 				display: flex;
 				flex-direction: column;
-				gap: 10px;
+				gap: 15px;
 
 				.phaseTitle {
 					color: white;
@@ -185,6 +186,7 @@
 				top: 0%;
 			}
 			.phaseCard2 {
+				padding: 1% 2%;
 				width: 28%;
 				right: 8%;
 				top: 25%;
