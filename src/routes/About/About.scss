@@ -1,7 +1,6 @@
 .About {
 	padding: 0 2%;
 	position: relative;
-	font-size: 1px;
 	.light {
 		position: absolute;
 		z-index: 2;
@@ -207,9 +206,209 @@
 	}
 
 	.buyContainer {
-		height: 100vh;
+		margin-top: 30vh;
+		height: 165vh;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		position: relative;
+
+		.buyHeader {
+			margin-top: 2%;
+			height: 24vh;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 25px;
+			.ligne {
+				width: 7%;
+				height: 5px;
+				border-radius: 25px;
+				background-color: $ambula-red;
+				border: none;
+				outline: none;
+			}
+
+			.title {
+				font-family: $poppins;
+				font-weight: 600;
+				color: white;
+				font-size: 4rem;
+				display: flex;
+				flex-direction: column;
+				line-height: 4.3rem;
+			}
+
+			.subtitle {
+				margin-top: 0px;
+				font-family: $inter;
+				color: $text-grey;
+				font-size: 1.1rem;
+				margin-bottom: 5px;
+				width: 30%;
+			}
+
+			.boxDecoration {
+				position: absolute;
+				width: 50%;
+				height: 20%;
+				background: $gradient-ambula;
+				border-top-left-radius: 20vw;
+				border-bottom-left-radius: 20vw;
+				right: -2%;
+				top: -2%;
+			}
+		}
+
+		.stepContainer {
+			margin-top: 10vh;
+			padding: 10%;
+			height: 141vh;
+			position: relative;
+
+			.stepCardBorder {
+				height: 18vh;
+				width: 40%;
+				padding: 1% 2%;
+				position: absolute;
+				border-radius: 25px;
+				border: 2px solid transparent;
+				background: linear-gradient(122.99deg, #ff0651 -17.74%, #ff0651 3.68%, rgba(255, 6, 81, 0) 51.97%) border-box;
+
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+			}
+
+			.stepCard {
+				height: calc(18vh + 2px);
+				width: calc(40% + 2px);
+				position: absolute;
+				padding: 1% 2%;
+				background: linear-gradient(137.55deg, rgba(255, 6, 81, 0.4) 0%, rgba(236, 16, 147, 0.4) 69.18%);
+				backdrop-filter: blur(2px);
+				border-radius: 25px;
+				font-family: $poppins;
+
+				.topContainer {
+					font-size: 1.8rem;
+					font-weight: 600;
+					padding-left: 13%;
+					color: white;
+					display: flex;
+					align-items: center;
+					margin-bottom: 2%;
+
+					span {
+						position: absolute;
+						margin-left: -10%;
+						font-size: 2.5rem;
+						background: $gradient-ambula;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+					}
+				}
+
+				.bottomContainer {
+					color: $text-grey;
+					padding-left: 13%;
+					span {
+						display: inline-block;
+						background: $gradient-ambula;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						text-decoration: underline;
+						line-height: 1.2;
+						border-bottom: 2px solid $ambula-red;
+					}
+				}
+			}
+
+			.stepCard1 {
+				top: 10%;
+				left: 10%;
+			}
+			.stepCard2 {
+				top: 30%;
+				right: 10%;
+			}
+			.stepCard3 {
+				top: 50%;
+				left: 10%;
+			}
+			.stepCard4 {
+				top: 70%;
+				right: 10%;
+			}
+			.stepCardLink1 {
+				box-sizing: border-box;
+				position: absolute;
+				width: 15%;
+				height: calc(16vh + 6px);
+				left: calc(54% + 2px);
+				top: calc(10% + 9vh);
+				border-width: 8px, 0px, 0px, 8px;
+				border-top: 8px solid transparent;
+				border-right: 8px solid transparent;
+				background: linear-gradient(180deg, rgba(255, 6, 81, 0.4) 0%, rgba(236, 16, 147, 0.4) 100%) border-box;
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				border-radius: 0px 75px 0px 0px;
+			}
+			.stepCardLink2 {
+				box-sizing: border-box;
+				position: absolute;
+				width: 15%;
+				height: calc(16vh + 6px);
+				right: calc(54% + 2px);
+				top: calc(30% + 9vh);
+				border-width: 8px, 0px, 0px, 8px;
+				border-top: 8px solid transparent;
+				border-left: 8px solid transparent;
+				background: linear-gradient(180deg, rgba(255, 6, 81, 0.4) 0%, rgba(236, 16, 147, 0.4) 100%) border-box;
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				border-radius: 75px 0px 0px 0px;
+			}
+			.stepCardLink3 {
+				box-sizing: border-box;
+				position: absolute;
+				width: 15%;
+				height: calc(16vh + 6px);
+				left: calc(54% + 2px);
+				top: calc(50% + 9vh);
+				border-width: 8px, 0px, 0px, 8px;
+				border-top: 8px solid transparent;
+				border-right: 8px solid transparent;
+				background: linear-gradient(180deg, rgba(255, 6, 81, 0.4) 0%, rgba(236, 16, 147, 0.4) 100%) border-box;
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				border-radius: 0px 75px 0px 0px;
+			}
+			.stepCardPuce {
+				position: absolute;
+				width: 5vh;
+				height: 5vh;
+				background: #ff0651;
+				border-radius: 50%;
+				box-shadow: 0px 0px 0px 25px rgba(255, 6, 81, 0.1);
+			}
+			.stepCardPuce1 {
+				left: 64%;
+				top: calc(10% + 8vh);
+			}
+			.stepCardPuce2 {
+				right: 64%;
+				top: calc(30% + 8vh);
+			}
+			.stepCardPuce3 {
+				left: 64%;
+				top: calc(50% + 8vh);
+			}
+		}
 	}
 }

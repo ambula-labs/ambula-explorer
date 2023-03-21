@@ -70,7 +70,70 @@ function About() {
 					</div>
 				</div>
 			</div>
-			<div className="buyContainer">&nbsp;</div>
+			<div className="buyContainer">
+				<div className="buyHeader">
+					<div className="ligne">&nbsp;</div>
+					<div className="title">
+						<span>How to buy</span>
+						<span>Ambula</span>
+					</div>
+					<div className="subtitle">
+						We at Ambula aim to use our reach to change the mentality around the globe and to have fun while doing so.
+					</div>
+					<div className="boxDecoration">&nbsp;</div>
+				</div>
+				<div className="stepContainer">
+					<div className="stepCard stepCard1">
+						<div className="topContainer">
+							<span>1</span>
+							Get MetaMask Wallet
+						</div>
+						<div className="bottomContainer">
+							Go to <span>Metamask.io</span> and the Chrome extensions. Finish the setup and make sure to keep your secret phrase
+							somewhere safe !
+						</div>
+					</div>
+					<div className="stepCardBorder stepCard1"></div>
+					<div className="stepCard stepCard2">
+						<div className="topContainer">
+							<span>2</span>
+							Send ETH to Metamask
+						</div>
+						<div className="bottomContainer">
+							Once you have setup metamask, you can send ETH from an exchange like Kraken, Coinbase or Binance to your Metamask wallet
+						</div>
+					</div>
+					<div className="stepCardBorder stepCard2"></div>
+					<div className="stepCard stepCard3">
+						<div className="topContainer">
+							<span>3</span>
+							Connect to Uniswap
+						</div>
+						<div className="bottomContainer">
+							Go to <span>Uniswap.org</span> and click the “Use Uniswap” button. When Metamask ask for your signature go ahead and sign
+							it.
+						</div>
+					</div>
+					<div className="stepCardBorder stepCard3"></div>
+					<div className="stepCard stepCard4">
+						<div className="topContainer">
+							<span>4</span>
+							Swap your ETH for Ambula
+						</div>
+						<div className="bottomContainer">
+							Set your percentage to 5-7% and buy an event amount of Ambula. Click on the swap button and make sure to set fast
+							transaction speed in Metamask
+						</div>
+					</div>
+					<div className="stepCardBorder stepCard4"></div>
+					<div className="stepCardLink1">&nbsp;</div>
+					<div className="stepCardPuce stepCardPuce1">&nbsp;</div>
+					<div className="stepCardLink2">&nbsp;</div>
+					<div className="stepCardPuce stepCardPuce2">&nbsp;</div>
+					<div className="stepCardLink3">&nbsp;</div>
+					<div className="stepCardPuce stepCardPuce3">&nbsp;</div>
+				</div>
+			</div>
 			<img src={lightVector} className="light" alt="Light vector" />
 			<img src={lightVector} className="light2" alt="Light vector" />
 		</div>
