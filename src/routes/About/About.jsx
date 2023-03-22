@@ -1,8 +1,74 @@
-import { useRef } from "react";
+import { useEffect } from "react";
 import lightVector from "@/assets/lightVector.svg";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "./About.scss";
 
 function About() {
+	const ctrls = useAnimation();
+	const ctrls2 = useAnimation();
+	const ctrls3 = useAnimation();
+	const ctrls4 = useAnimation();
+
+	const [ref1, inView] = useInView({
+		threshold: 0.5,
+		triggerOnce: false,
+	});
+	const [ref2, inView2] = useInView({
+		threshold: 0.5,
+		triggerOnce: false,
+	});
+	const [ref3, inView3] = useInView({
+		threshold: 0.5,
+		triggerOnce: false,
+	});
+	const [ref4, inView4] = useInView({
+		threshold: 0.5,
+		triggerOnce: false,
+	});
+
+	useEffect(() => {
+		if (inView) {
+			ctrls.start("visible");
+		}
+		if (!inView) {
+			ctrls.start("hidden");
+		}
+	}, [ctrls, inView]);
+
+	useEffect(() => {
+		if (inView2) {
+			ctrls2.start("visible");
+		}
+		if (!inView2) {
+			ctrls2.start("hidden");
+		}
+	}, [ctrls2, inView2]);
+
+	useEffect(() => {
+		if (inView3) {
+			ctrls3.start("visible");
+			console.log("visible");
+		}
+		if (!inView3) {
+			ctrls3.start("hidden");
+		}
+	}, [ctrls3, inView3]);
+
+	useEffect(() => {
+		if (inView4) {
+			ctrls4.start("visible");
+		}
+		if (!inView4) {
+			ctrls4.start("hidden");
+		}
+	}, [ctrls4, inView4]);
+
+	const phaseCardAnimation = {
+		visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.2, 0.65, 0.3, 0.9] } },
+		hidden: { opacity: 0, y: 100 },
+	};
+
 	return (
 		<div className="About">
 			<div className="aboutContainer">
@@ -42,32 +108,32 @@ function About() {
 					<div className="rond rond2">&nbsp;</div>
 					<div className="rond rond3">&nbsp;</div>
 					<div className="rond rond4">&nbsp;</div>
-					<div className="phaseCard phaseCard1">
+					<motion.div className="phaseCard phaseCard1" ref={ref1} animate={ctrls} initial="hidden" variants={phaseCardAnimation}>
 						<div className="phaseTitle">Private Blockchain</div>
 						<div className="phaseDescription">
 							We will first release an open source version of the Ambula blockchain, based on the PoI algorithm in it's initial form. It
 							will serve as a free and monitorable private blockchain network.
 						</div>
-					</div>
-					<div className="phaseCard phaseCard2">
+					</motion.div>
+					<motion.div className="phaseCard phaseCard2" ref={ref2} animate={ctrls2} initial="hidden" variants={phaseCardAnimation}>
 						<div className="phaseTitle">Public blockchain with staking, private testnet</div>
 						<div className="phaseDescription">
 							We will then release an upgraded version of Ambula, supporting public access thanks to a modified version of the PoI
 							algorithm. It will use staking as a way to ensure the consensus is reached and punish bad nodes. We will make our test on
 							a private test network
 						</div>
-					</div>
-					<div className="phaseCard phaseCard3">
+					</motion.div>
+					<motion.div className="phaseCard phaseCard3" ref={ref3} animate={ctrls3} initial="hidden" variants={phaseCardAnimation}>
 						<div className="phaseTitle">Launch of the public testnet</div>
 						<div className="phaseDescription">
 							We will allow anyone to access the test network, to get a last bit of user feedback and test the resilience of the
 							algorithm.
 						</div>
-					</div>
-					<div className="phaseCard phaseCard4">
+					</motion.div>
+					<motion.div className="phaseCard phaseCard4" ref={ref4} animate={ctrls4} initial="hidden" variants={phaseCardAnimation}>
 						<div className="phaseTitle">Public launch on mainnet</div>
 						<div className="phaseDescription">Public launch on mainnet</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 			<div className="buyContainer">
@@ -127,11 +193,50 @@ function About() {
 					</div>
 					<div className="stepCardBorder stepCard4"></div>
 					<div className="stepCardLink1">&nbsp;</div>
-					<div className="stepCardPuce stepCardPuce1">&nbsp;</div>
+					<motion.div
+						drag
+						dragElastic={0.2}
+						dragSnapToOrigin={true}
+						whileHover={{
+							scale: 1.1,
+						}}
+						whileDrag={{
+							scale: 0.9,
+						}}
+						className="stepCardPuce stepCardPuce1"
+					>
+						&nbsp;
+					</motion.div>
 					<div className="stepCardLink2">&nbsp;</div>
-					<div className="stepCardPuce stepCardPuce2">&nbsp;</div>
+					<motion.div
+						drag
+						dragElastic={0.2}
+						dragSnapToOrigin={true}
+						whileHover={{
+							scale: 1.1,
+						}}
+						whileDrag={{
+							scale: 0.9,
+						}}
+						className="stepCardPuce stepCardPuce2"
+					>
+						&nbsp;
+					</motion.div>
 					<div className="stepCardLink3">&nbsp;</div>
-					<div className="stepCardPuce stepCardPuce3">&nbsp;</div>
+					<motion.div
+						drag
+						dragElastic={0.2}
+						dragSnapToOrigin={true}
+						whileHover={{
+							scale: 1.1,
+						}}
+						whileDrag={{
+							scale: 0.9,
+						}}
+						className="stepCardPuce stepCardPuce3"
+					>
+						&nbsp;
+					</motion.div>
 				</div>
 			</div>
 			<img src={lightVector} className="light" alt="Light vector" />
