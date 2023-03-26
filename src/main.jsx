@@ -5,6 +5,7 @@ import Landing from "./routes/Landing/Landing.jsx";
 import Product from "./routes/Product/Product.jsx";
 import About from "./routes/About/About";
 import Error from "./routes/Error/Error.jsx";
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -32,6 +33,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<ParallaxProvider>
+			<RouterProvider router={router} />
+		</ParallaxProvider>
 	</React.StrictMode>
 );

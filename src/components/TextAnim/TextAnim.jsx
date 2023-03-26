@@ -3,20 +3,12 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import './TextAnim.scss'
 
-function TextAnim({text}) {
-    const handleClickScroll = () => {
-      const element = document.getElementById('screen2');
-      if (element) {
-        // 👇 Will scroll smoothly to the top of the next section
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
-    
+function TextAnim({text}) {    
     const ctrls = useAnimation();
     
     const { ref, inView } = useInView({
       threshold: 0.5,
-      triggerOnce: true,
+      triggerOnce: false,
     });
     
     useEffect(() => {
