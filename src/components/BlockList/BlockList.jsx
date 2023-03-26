@@ -32,8 +32,8 @@ function BlockList({ type }) {
 
 	async function getBlockList() {
 		// Se connecter au nœud Substrate
-		//const wsProvider = new WsProvider("wss://rpc.polkadot.io"); // REMOTE MODE
-		const wsProvider = new WsProvider("ws://127.0.0.1:9944"); // LOCAL MODE
+		const wsProvider = new WsProvider("wss://rpc.polkadot.io"); // REMOTE MODE
+		// const wsProvider = new WsProvider('ws://127.0.0.1:9944'); // LOCAL MODE
 
 		const api = await ApiPromise.create({ provider: wsProvider });
 
