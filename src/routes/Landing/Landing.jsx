@@ -8,8 +8,7 @@ import Mail from "@/assets/telegram-alt.svg";
 import Twitter from "@/assets/twitter.svg";
 import Youtube from "@/assets/youtube.svg";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import ReactPageScroller, { SectionContainer } from 'react-page-scroller';
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax } from "react-scroll-parallax";
 import TextAnim from "@/components/TextAnim/TextAnim";
 import { Canvas } from "@react-three/fiber";
 import { useInView } from "react-intersection-observer";
@@ -19,49 +18,48 @@ import TransactionPhone from "@/assets/TransactionPhoneRose.png";
 import "./Landing.scss";
 import AmbulaModel from "../../components/Models/AmubulaModel";
 
-
 function Landing() {
 	const ctrls = useAnimation();
 
 	//Animation utilisée pour nos Cards présentes dans la liste fast growing community
 	const growingFastContainerVariants = {
 		hidden: {
-		  opacity: 0
+			opacity: 0,
 		},
 		visible: {
-		  opacity: 1,
-		  transition: {
-			staggerChildren: 0.1,
-            delayChildren: 0.5,
-		  }
-		}
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.1,
+				delayChildren: 0.5,
+			},
+		},
 	};
 
 	const growingFastCardAnimation = {
-		hidden: { scale: 0, opacity: 0},
-		visible: { 
-			scale: 1, 
+		hidden: { scale: 0, opacity: 0 },
+		visible: {
+			scale: 1,
 			opacity: 1,
 			transition: {
 				duration: 1,
 				ease: [0.2, 0.65, 0.3, 0.9],
-			  }
-		}
-	}
+			},
+		},
+	};
 
-	const [growingFastRef, inView] = useInView( {
-		threshold: .2,
+	const [growingFastRef, inView] = useInView({
+		threshold: 0.2,
 		triggerOnce: false,
 	});
-	  
+
 	useEffect(() => {
-	if (inView) {
-		ctrls.start("visible");
-	}
-	if (!inView) {
-		ctrls.start("hidden");
-	}
-	console.log(inView);
+		if (inView) {
+			ctrls.start("visible");
+		}
+		if (!inView) {
+			ctrls.start("hidden");
+		}
+		console.log(inView);
 	}, [ctrls, inView]);
 
 	const screen2 = useRef(null);
@@ -84,9 +82,7 @@ function Landing() {
 						</div>
 					</div>
 					<div className="content">
-						Get started with a new client-puzzle called
-						Proof-of-Interaction to define a new energy-efficient
-						Blockchain protocol.
+						Get started with a new client-puzzle called Proof-of-Interaction to define a new energy-efficient Blockchain protocol.
 					</div>
 					<motion.button
 						className="initiateButton"
@@ -122,30 +118,14 @@ function Landing() {
 					onClick={executeScroll}
 				>
 					<span>Learn More</span>
-					<FontAwesomeIcon
-						className="angle"
-						icon={faAngleDown}
-						bounce
-					/>
+					<FontAwesomeIcon className="angle" icon={faAngleDown} bounce />
 				</motion.div>
 				<div className="appLogoContainer">
-					<img
-						src={Youtube}
-						className="appLogo youtube"
-						alt="Youtube logo"
-					/>
-					<img
-						src={Twitter}
-						className="appLogo twitter"
-						alt="Twitter logo"
-					/>
+					<img src={Youtube} className="appLogo youtube" alt="Youtube logo" />
+					<img src={Twitter} className="appLogo twitter" alt="Twitter logo" />
 					<img src={Mail} className="appLogo" alt="Mail logo" />
 					<img src={Discord} className="appLogo" alt="Discord logo" />
-					<img
-						src={Github}
-						className="appLogo github"
-						alt="Github logo"
-					/>
+					<img src={Github} className="appLogo github" alt="Github logo" />
 				</div>
 			</div>
 			<img src={lightVector} className="light" alt="Light vector" />
@@ -157,7 +137,9 @@ function Landing() {
 			</div>
 			<div className="screen screen3">
 				<Parallax speed={50} className="titleScreen">
-					<div><span>Monitoring</span></div>
+					<div>
+						<span>Monitoring</span>
+					</div>
 					<div>Real-Time Transaction</div>
 				</Parallax>
 				<Parallax speed={25} className="transactionImage">
@@ -174,18 +156,48 @@ function Landing() {
 			<div className="screen screen4">
 				<div className="titleScreen">
 					<div>Transaction Enabled</div>
-					<div><span>Wallet</span></div>
+					<div>
+						<span>Wallet</span>
+					</div>
 				</div>
 			</div>
 			<div className="screen screen5" ref={growingFastRef}>
-				<div className="titleScreen" >
-					<div>Take part of our <span>fast</span></div>
-					<div><span>growing</span> community</div>
+				<div className="titleScreen">
+					<div>
+						Take part of our <span>fast</span>
+					</div>
+					<div>
+						<span>growing</span> community
+					</div>
 				</div>
 				<motion.div animate={ctrls} className="growingFastContainer" variants={growingFastContainerVariants}>
-						<motion.div whileHover={{scale: 1.1,}} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard" layout><img src={lightVector} className="growingFastLight" alt="Light vector" /></motion.div>
-						<motion.div whileHover={{scale: 1.1,}} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard big" layout><img src={lightVector} className="growingFastLight" alt="Light vector" /></motion.div>
-						<motion.div whileHover={{scale: 1.1,}} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard" layout><img src={lightVector} className="growingFastLight" alt="Light vector" /></motion.div>
+					<motion.div
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}
+						variants={growingFastCardAnimation}
+						className="growingFastCard"
+						layout
+					>
+						<img src={lightVector} className="growingFastLight" alt="Light vector" />
+					</motion.div>
+					<motion.div
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}
+						variants={growingFastCardAnimation}
+						className="growingFastCard big"
+						layout
+					>
+						<img src={lightVector} className="growingFastLight" alt="Light vector" />
+					</motion.div>
+					<motion.div
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}
+						variants={growingFastCardAnimation}
+						className="growingFastCard"
+						layout
+					>
+						<img src={lightVector} className="growingFastLight" alt="Light vector" />
+					</motion.div>
 				</motion.div>
 			</div>
 		</div>
