@@ -1,190 +1,180 @@
 .Footer {
-    width: 96%;
-    height: 43vh;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 3% 2%;
+	width: 96%;
+	height: 43vh;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 3% 2%;
 
+	.mailingContainer {
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: flex-end;
+		width: 50%;
+		padding-right: 5%;
+		margin-bottom: 100px;
+		color: #fff;
+		font-family: $inter;
 
-    .mailingContainer {
-        align-self: flex-end;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-end;
-        width: 50%;
-        padding-right: 5%;
-        margin-bottom: 100px;
-        color:#FFF;
-        font-family: $greycliff;
+		.mailingTitle {
+			font-size: 2rem;
+			font-weight: 600;
+		}
 
-        .mailingTitle {
-            font-size: 2rem;
-            font-weight: 600;
-        }
+		.mailingDesc {
+			font-size: 0.8rem;
+			color: $text-grey;
+			font-family: $inter;
+		}
 
-        .mailingDesc {
-            font-size: 0.8rem;
-            color: $text-grey;
-            font-family: $inter;
-        }
+		.inputContainer {
+			width: 100%;
+			z-index: 3;
+			position: relative;
+			padding: 9px 10px 10px 10px;
+			display: flex;
+			align-items: center;
+			font-size: 30px;
 
-        .inputContainer {
-            width: 100%;
-            z-index: 3;
-            position: relative;
-            padding: 9px 10px 10px 10px;
-            display: flex;
-            align-items: center;
-            font-size: 30px;
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: 50px;
+				padding: 3px; /* control the border thickness */
+				background: $gradient-ambula;
+				-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				pointer-events: none;
+			}
 
-              
-            &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 50px;
-            padding: 3px; /* control the border thickness */
-            background: $gradient-ambula;
-            -webkit-mask: 
-                linear-gradient(#fff 0 0) content-box, 
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-                    mask-composite: exclude;
-            pointer-events: none;
-            }
+			input {
+				background-color: transparent;
+				width: 100%;
+				border: none;
+				font-family: $poppins;
+				font-weight: 600;
+				color: white;
 
-            input {
-                background-color: transparent;
-                width: 100%;
-                border: none;
-                font-family: $poppins;
-                font-weight: 600;
-                color: white;
+				&:focus {
+					outline: none;
+				}
+			}
 
-                &:focus{
-                    outline: none;
-                }
-            }
+			.fa-arrow-right {
+				font-size: 1.2rem;
+				background: $gradient-ambula;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				display: initial;
+				cursor: pointer;
+			}
+		}
+	}
 
-            .fa-arrow-right {
-                font-size: 1.2rem;
-                background: $gradient-ambula;
-                -webkit-background-clip: text;
-	            -webkit-text-fill-color: transparent;
-                display: initial;
-                cursor: pointer;
-            }
-        }
-    }
+	.bottomContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 
-    .bottomContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+		.leftContainer {
+			width: 50%;
+			.ambulaLogo {
+				width: 15vw;
+			}
 
-        .leftContainer {
-            width: 50%;
-            .ambulaLogo {
-                width: 15vw;
-            }
+			.content {
+				font-family: $inter;
+				font-weight: 200;
+				font-size: 0.8rem;
+				color: $text-grey;
+				width: 80%;
+				margin-bottom: 5px;
+			}
 
-            .content {
-                font-family: $inter;
-                font-weight: 200;
-                font-size: 0.8rem;
-                color: $text-grey;
-                width: 80%;
-                margin-bottom: 5px;
-            }
+			.appLogoContainer {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 20px;
+				width: 50%;
 
-            .appLogoContainer {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 20px;
-                width: 50%;
-        
-                .appLogo {
-                    width: 15%;
-                    filter: brightness(0) invert(1);
-                    cursor: pointer;
-                }
-        
-                .github {
-                    margin-right: 5px;
-                    width: 12% !important;
-                }
-        
-                .youtube {
-                    margin-left: -5px;
-                    width: 20% !important;
-                }
-            }
-        }
+				.appLogo {
+					width: 15%;
+					filter: brightness(0) invert(1);
+					cursor: pointer;
+				}
 
-        .linkContainer {
-            width: 15%;
+				.github {
+					margin-right: 5px;
+					width: 12% !important;
+				}
 
-            display: flex;
-            flex-direction: column;
-            gap:20px;
+				.youtube {
+					margin-left: -5px;
+					width: 20% !important;
+				}
+			}
+		}
 
-            .linkTitle {
-                color: #FFF;
-                font-size: 1rem;
-                font-family: $greycliff;
-                font-weight: 600;
-            }
-            a {
-                text-decoration: none;
-                color: $text-grey;
-                font-family: $inter;
-                font-size: 0.8rem;
-            }
-        }
+		.linkContainer {
+			width: 15%;
 
-    }
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
 
-    .rightContainer {
-        display: flex;
-        flex-direction: row;
-        border-radius: 25px;
-        gap: 20px;
-        align-items: center;
+			.linkTitle {
+				color: #fff;
+				font-size: 1rem;
+				font-family: $poppins;
+				font-weight: 600;
+			}
+			a {
+				text-decoration: none;
+				color: $text-grey;
+				font-family: $inter;
+				font-size: 0.8rem;
+			}
+		}
+	}
 
-    
-        
-        .enterApp {
-            position:relative;
-            padding: 2px 10px 3px 10px;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            vertical-align: middle;
+	.rightContainer {
+		display: flex;
+		flex-direction: row;
+		border-radius: 25px;
+		gap: 20px;
+		align-items: center;
 
-            &::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                border-radius: 25px;
-                padding: 2px; /* control the border thickness */
-                background: $gradient-ambula;
-                -webkit-mask: 
-                  linear-gradient(#fff 0 0) content-box, 
-                  linear-gradient(#fff 0 0);
-                -webkit-mask-composite: xor;
-                        mask-composite: exclude;
-                pointer-events: none;
-              }
+		.enterApp {
+			position: relative;
+			padding: 2px 10px 3px 10px;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			vertical-align: middle;
 
-            &:hover {
-                border-radius: 25px;
-                background: $gradient-ambula;
-            }
-        }
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: 25px;
+				padding: 2px; /* control the border thickness */
+				background: $gradient-ambula;
+				-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				pointer-events: none;
+			}
 
-    }
+			&:hover {
+				border-radius: 25px;
+				background: $gradient-ambula;
+			}
+		}
+	}
 }
