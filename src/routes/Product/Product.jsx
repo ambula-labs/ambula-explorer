@@ -10,13 +10,36 @@ import { motion } from "framer-motion";
 import Toggle from "react-toggle";
 import BlockList from "../../components/BlockList/BlockList";
 import "./Product.scss";
+import usePeerListStore from "../../stores/usePeerListStore";
+import PeerList from "../../components/PeerList/PeerList";
 
 function Product() {
 	const [isCurrentMarketPrice, setIsCurrentMarketPrice] = useState(true);
+	const storedPeerList = usePeerListStore((state) => state.peerList);
+	const storedBestNumber = usePeerListStore((state) => state.bestNumber);
 
 	function toggleMarketPrice() {
 		setIsCurrentMarketPrice(!isCurrentMarketPrice);
 	}
+
+	const [count, setCount] = useState(10);
+	const [refreshPeerList, setRefreshPeerList] = useState(false);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCount(10);
+			setRefreshPeerList((refreshPeerList) => !refreshPeerList); //
+		}, 10000);
+
+		const intervalPrint = setInterval(() => {
+			setCount((count) => (count > 0 ? count - 0.1 : count));
+		}, 100);
+
+		return () => {
+			clearInterval(interval);
+			clearInterval(intervalPrint);
+		};
+	}, []);
 
 	useEffect(() => {
 		console.log(isCurrentMarketPrice);
@@ -43,9 +66,7 @@ function Product() {
 						</div>
 					</div>
 				</div>
-				<div className="rightHeader">
-					<div className="pub">ADVERTISING INSERT</div>
-				</div>
+				<div className="rightHeader"></div>
 			</div>
 			<div className="cryptoStats">
 				<div className="statsBarBackground">
@@ -163,9 +184,37 @@ function Product() {
 							Create Order
 						</motion.button>
 					</div>
-					<div className="statsChart">
-						<div className="statsChartBackground"></div>
-						<div className="statsChartBorder"></div>
+					<div className="peerStats">
+						<div className="peerStatsBackground">
+							<div className="peerStatsTop">
+								<div className="peerStatsTopCardsLeft">
+									<div className="peerStatsTopCard">
+										<div className="peerStatsTopCardTitle">Refresh in</div>
+										<div className="peerStatsTopCardContent">
+											{count.toFixed(1)}
+											<span> s</span>
+										</div>
+									</div>
+									<div className="peerStatsTopCard">
+										<div className="peerStatsTopCardTitle">Total Peer</div>
+										<div className="peerStatsTopCardContent">{storedPeerList.length}</div>
+									</div>
+								</div>
+								<div className="peerStatsTopCardsRight">
+									<div className="peerStatsTopCard">
+										<div className="peerStatsTopCardTitle">Peer Best</div>
+										<div className="peerStatsTopCardContent">{storedBestNumber}</div>
+									</div>
+								</div>
+							</div>
+							<div className="peerStatsMiddle">
+								<div className="peerStatsMiddleConnectedPeer">CONNECTED PEER</div>
+								<div className="peerStatsMiddleBestHash">Best Hash</div>
+								<div className="peerStatsMiddleBeshNumber">Best #</div>
+							</div>
+							<PeerList refresh={refreshPeerList} />
+						</div>
+						<div className="peerStatsBorder"></div>
 					</div>
 				</div>
 			</div>
