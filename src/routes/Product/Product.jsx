@@ -6,21 +6,44 @@ import AmbulaLogoShort from "@/assets/AmbulaLogoSmall.svg";
 import EtherumLogo from "@/assets/eth-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp, faCaretDown, faCircleInfo, faAnglesDown } from "@fortawesome/free-solid-svg-icons";
-import { motion } from 'framer-motion';
-import Toggle from 'react-toggle';
+import { motion } from "framer-motion";
+import Toggle from "react-toggle";
 import BlockList from "../../components/BlockList/BlockList";
 import "./Product.scss";
+import usePeerListStore from "../../stores/usePeerListStore";
+import PeerList from "../../components/PeerList/PeerList";
 
 function Product() {
-  const [isCurrentMarketPrice, setIsCurrentMarketPrice] = useState(true);
+	const [isCurrentMarketPrice, setIsCurrentMarketPrice] = useState(true);
+	const storedPeerList = usePeerListStore((state) => state.peerList);
+	const storedBestNumber = usePeerListStore((state) => state.bestNumber);
 
-  function toggleMarketPrice() {
-    setIsCurrentMarketPrice(!isCurrentMarketPrice);
-  }
+	function toggleMarketPrice() {
+		setIsCurrentMarketPrice(!isCurrentMarketPrice);
+	}
 
-  useEffect(() => {
-    console.log(isCurrentMarketPrice);
-  }, [isCurrentMarketPrice]);
+	const [count, setCount] = useState(10);
+	const [refreshPeerList, setRefreshPeerList] = useState(false);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCount(10);
+			setRefreshPeerList((refreshPeerList) => !refreshPeerList); //
+		}, 10000);
+
+		const intervalPrint = setInterval(() => {
+			setCount((count) => (count > 0 ? count - 0.1 : count));
+		}, 100);
+
+		return () => {
+			clearInterval(interval);
+			clearInterval(intervalPrint);
+		};
+	}, []);
+
+	useEffect(() => {
+		console.log(isCurrentMarketPrice);
+	}, [isCurrentMarketPrice]);
 
 	return (
 		<div className="Product">
@@ -43,9 +66,7 @@ function Product() {
 						</div>
 					</div>
 				</div>
-				<div className="rightHeader">
-					<div className="pub">ADVERTISING INSERT</div>
-				</div>
+				<div className="rightHeader"></div>
 			</div>
 			<div className="cryptoStats">
 				<div className="statsBarBackground">
@@ -132,38 +153,68 @@ function Product() {
 									</div>
 								</div>
 							</div>
-              <div className="marketPriceContainer">
-                <div className="marketPriceCard">
-                  Market price: 
-                  <span>2.91053 ETH</span>
-                  <img src={lightVector} className="marketPriceLight" alt="Light vector" />
-                </div>
-                <div className="marketPriceSelect">
-                <Toggle
-                  id='market-status'
-                  defaultChecked={isCurrentMarketPrice}
-                  onChange={toggleMarketPrice} /> 
-                <label htmlFor='market-status'>Set current market price</label>
-                </div>
-              </div>
-              <div className="totalFeeContainer">
-                Total fee: 
-                <div className="fee">0,52 AMB <motion.div whileHover={{scale: 1.1,}} whileTap={{ scale: 0.9 }}><FontAwesomeIcon icon={faAnglesDown} className='faAnglesDown' /></motion.div></div>
-              </div>
+							<div className="marketPriceContainer">
+								<div className="marketPriceCard">
+									Market price:
+									<span>2.91053 ETH</span>
+									<img src={lightVector} className="marketPriceLight" alt="Light vector" />
+								</div>
+								<div className="marketPriceSelect">
+									<Toggle id="market-status" defaultChecked={isCurrentMarketPrice} onChange={toggleMarketPrice} />
+									<label htmlFor="market-status">Set current market price</label>
+								</div>
+							</div>
+							<div className="totalFeeContainer">
+								Total fee:
+								<div className="fee">
+									0,52 AMB{" "}
+									<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+										<FontAwesomeIcon icon={faAnglesDown} className="faAnglesDown" />
+									</motion.div>
+								</div>
+							</div>
 						</div>
-            <motion.button
-                className='createOrderBtn'   
-                whileHover={{
-                  scale: 1.1,
-                }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Create Order
-              </motion.button>
+						<motion.button
+							className="createOrderBtn"
+							whileHover={{
+								scale: 1.1,
+							}}
+							whileTap={{ scale: 0.9 }}
+						>
+							Create Order
+						</motion.button>
 					</div>
-					<div className="statsChart">
-						<div className="statsChartBackground"></div>
-						<div className="statsChartBorder"></div>
+					<div className="peerStats">
+						<div className="peerStatsBackground">
+							<div className="peerStatsTop">
+								<div className="peerStatsTopCardsLeft">
+									<div className="peerStatsTopCard">
+										<div className="peerStatsTopCardTitle">Refresh in</div>
+										<div className="peerStatsTopCardContent">
+											{count.toFixed(1)}
+											<span> s</span>
+										</div>
+									</div>
+									<div className="peerStatsTopCard">
+										<div className="peerStatsTopCardTitle">Total Peer</div>
+										<div className="peerStatsTopCardContent">{storedPeerList.length}</div>
+									</div>
+								</div>
+								<div className="peerStatsTopCardsRight">
+									<div className="peerStatsTopCard">
+										<div className="peerStatsTopCardTitle">Peer Best</div>
+										<div className="peerStatsTopCardContent">{storedBestNumber}</div>
+									</div>
+								</div>
+							</div>
+							<div className="peerStatsMiddle">
+								<div className="peerStatsMiddleConnectedPeer">CONNECTED PEER</div>
+								<div className="peerStatsMiddleBestHash">Best Hash</div>
+								<div className="peerStatsMiddleBeshNumber">Best #</div>
+							</div>
+							<PeerList refresh={refreshPeerList} />
+						</div>
+						<div className="peerStatsBorder"></div>
 					</div>
 				</div>
 			</div>
