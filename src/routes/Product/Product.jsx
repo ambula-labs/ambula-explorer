@@ -197,7 +197,7 @@ function Product() {
 									</div>
 									<div className="peerStatsTopCard">
 										<div className="peerStatsTopCardTitle">Total Peer</div>
-										<div className="peerStatsTopCardContent">{storedPeerList.length}</div>
+										<div className="peerStatsTopCardContent">{storedPeerList?.length}</div>
 									</div>
 								</div>
 								<div className="peerStatsTopCardsRight">
