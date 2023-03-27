@@ -82,6 +82,7 @@ function Landing() {
 						</div>
 					</div>
 					<div className="content">
+						{import.meta.env.VITE_WS_PROVIDER}
 						Get started with a new client-puzzle called Proof-of-Interaction to define a new energy-efficient Blockchain protocol.
 					</div>
 					<motion.button

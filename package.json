@@ -1,42 +1,43 @@
 {
-  "name": "ambula-explorer",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
-    "@fortawesome/free-solid-svg-icons": "^6.3.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@polkadot/api": "^9.14.2",
-    "@polkadot/rpc-provider": "^9.14.2",
-    "@react-three/drei": "^9.56.27",
-    "@react-three/fiber": "^8.11.5",
-    "@substra-hooks/core": "^0.0.58",
-    "@substrate/api-sidecar": "^14.4.1",
-    "@substrate/connect": "^0.7.20",
-    "drei": "^2.2.21",
-    "framer-motion": "^10.0.0",
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-intersection-observer": "^9.4.3",
-    "react-router-dom": "^6.8.1",
-    "react-scroll-parallax": "^3.3.2",
-    "react-toggle": "^4.1.3",
-    "sort-by": "^1.2.0",
-    "zustand": "^4.3.6"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
-    "sass": "^1.58.3",
-    "vite": "^4.1.0"
-  }
+	"name": "ambula-explorer",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"localnode": "cross-env VITE_WS_PROVIDER=ws://127.0.0.1:9944 vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.3.0",
+		"@fortawesome/free-solid-svg-icons": "^6.3.0",
+		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@polkadot/api": "^9.14.2",
+		"@polkadot/rpc-provider": "^9.14.2",
+		"@react-three/drei": "^9.56.27",
+		"@react-three/fiber": "^8.11.5",
+		"@substra-hooks/core": "^0.0.58",
+		"@substrate/api-sidecar": "^14.4.1",
+		"@substrate/connect": "^0.7.20",
+		"drei": "^2.2.21",
+		"framer-motion": "^10.0.0",
+		"localforage": "^1.10.0",
+		"match-sorter": "^6.3.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-intersection-observer": "^9.4.3",
+		"react-router-dom": "^6.8.1",
+		"react-scroll-parallax": "^3.3.2",
+		"react-toggle": "^4.1.3",
+		"sort-by": "^1.2.0",
+		"zustand": "^4.3.6"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.27",
+		"@types/react-dom": "^18.0.10",
+		"@vitejs/plugin-react": "^3.1.0",
+		"sass": "^1.58.3",
+		"vite": "^4.1.0"
+	}
 }

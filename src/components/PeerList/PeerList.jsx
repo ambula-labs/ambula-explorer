@@ -1,9 +1,9 @@
 import AmbulaLogoShort from "@/assets/AmbulaLogoSmall.svg";
-import { ApiPromise, WsProvider } from "@polkadot/api";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Peer } from "./Peer";
 import usePeerListStore from "../../stores/usePeerListStore";
+import usePolkadotApiStore from "../../stores/usePolkadotApiStore";
 import "./PeerList.scss";
 
 function PeerList(props) {
@@ -11,6 +11,7 @@ function PeerList(props) {
 
 	const [peerList, setPeerList] = useState([]);
 	const [peerListTmp, setPeerListTmp] = useState([]);
+	const polkadotApi = usePolkadotApiStore((state) => state.api);
 	const setStoredPeerList = usePeerListStore((state) => state.setPeerList);
 	const setStoredBestNumber = usePeerListStore((state) => state.setBestNumber);
 
@@ -48,13 +49,8 @@ function PeerList(props) {
 	};
 
 	async function getPeerInformation() {
-		// Se connecter au nœud Substrate
-		//const wsProvider = new WsProvider("wss://rpc.polkadot.io"); // REMOTE MODE
-		const wsProvider = new WsProvider("ws://127.0.0.1:9944"); // LOCAL MODE
-
-		const api = await ApiPromise.create({ provider: wsProvider });
 		// Retrieve the list of peers
-		const peers = await api.rpc.system.peers();
+		const peers = await polkadotApi.rpc.system.peers();
 
 		peers.map((peer) => {
 			addPeer(new Peer(peer.roles, peer.peerId, peer.bestHash, peer.bestNumber));
