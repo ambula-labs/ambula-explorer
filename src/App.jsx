@@ -6,7 +6,6 @@ import Footer from "./components/Footer/Footer.jsx";
 import usePolkadotApiStore from "./stores/usePolkadotApiStore.jsx";
 
 function App() {
-	const [count, setCount] = useState(0);
 	const setPolkadotApi = usePolkadotApiStore((state) => state.setWsProvider);
 
 	useEffect(() => {
