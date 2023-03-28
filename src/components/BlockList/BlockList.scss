@@ -28,7 +28,7 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
-	
+
 			.left {
 				display: flex;
 				flex-direction: row;
@@ -36,7 +36,7 @@
 				height: 100%;
 				gap: 5px;
 				margin-right: 10px;
-	
+
 				.type {
 					width: 45%;
 					background: linear-gradient(
@@ -58,7 +58,7 @@
 					justify-content: center;
 					align-items: center;
 				}
-	
+
 				.infos {
 					display: flex;
 					flex-direction: column;
@@ -74,55 +74,55 @@
 					}
 				}
 			}
-	
+
 			.center {
 				width: 50%;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-	
+
 				.title {
 					font-size: 1.2rem;
 				}
-	
+
 				.infos {
 					font-size: 0.8rem;
 					color: $grey;
-	
+
 					span {
 						color: $ambula-red;
 						font-weight: 700;
 						font-size: 0.9rem;
 					}
 				}
-	
+
 				.from {
 					text-align: left;
 					color: white;
 					font-weight: 700;
 					font-size: 1.1rem;
 					width: 100%;
-	
+
 					span {
 						color: $ambula-red;
 						font-size: 0.9rem;
 					}
 				}
-	
+
 				.to {
 					text-align: left;
 					color: white;
 					font-weight: 700;
 					font-size: 1.1rem;
 					width: 100%;
-	
+
 					span {
 						color: $ambula-red;
 						font-size: 0.9rem;
 					}
 				}
 			}
-	
+
 			.right {
 				width: 25%;
 				display: flex;
@@ -130,11 +130,11 @@
 				align-items: center;
 				justify-content: end;
 				height: 100%;
-	
+
 				img {
 					height: 40%;
 				}
-	
+
 				span {
 					text-align: end;
 					width: 45%;
@@ -144,7 +144,7 @@
 				}
 			}
 		}
-	
+
 		.BlockCardBorder {
 			height: 92%;
 			width: 96%;
@@ -157,5 +157,5 @@
 			-webkit-mask-composite: xor;
 			mask-composite: exclude;
 		}
-	}	
+	}
 }

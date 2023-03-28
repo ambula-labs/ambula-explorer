@@ -1,12 +1,13 @@
 import AmbulaLogoShort from "@/assets/AmbulaLogoSmall.svg";
-import { ApiPromise, WsProvider } from "@polkadot/api";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import usePolkadotApiStore from "../../stores/usePolkadotApiStore";
 import "./BlockList.scss";
 
 function BlockList({ type }) {
 	const [tmpBlockList, setTmpBlockList] = useState([]);
 	const [blockList, setBlockList] = useState([]);
+	const polkadotApi = usePolkadotApiStore((state) => state.api);
 	let keys = [];
 
 	//Fonction permettant de retourner un tableau unique d'élement
@@ -31,14 +32,8 @@ function BlockList({ type }) {
 	};
 
 	async function getBlockList() {
-		// Se connecter au nœud Substrate
-		const wsProvider = new WsProvider("wss://rpc.polkadot.io"); // REMOTE MODE
-		// const wsProvider = new WsProvider('ws://127.0.0.1:9944'); // LOCAL MODE
-
-		const api = await ApiPromise.create({ provider: wsProvider });
-
 		// Souscription aux nouveau Header
-		const hu = await api.rpc.chain.subscribeNewHeads((block) => {
+		const hu = await polkadotApi.rpc.chain.subscribeNewHeads((block) => {
 			//Ajout d'un nouveau block
 			addBlock(block);
 		});

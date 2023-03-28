@@ -12,9 +12,11 @@ import BlockList from "../../components/BlockList/BlockList";
 import "./Product.scss";
 import usePeerListStore from "../../stores/usePeerListStore";
 import PeerList from "../../components/PeerList/PeerList";
+import usePolkadotApiStore from "../../stores/usePolkadotApiStore";
 
 function Product() {
 	const [isCurrentMarketPrice, setIsCurrentMarketPrice] = useState(true);
+	const polkadotApiIsLoading = usePolkadotApiStore((state) => state.loading);
 	const storedPeerList = usePeerListStore((state) => state.peerList);
 	const storedBestNumber = usePeerListStore((state) => state.bestNumber);
 
@@ -212,7 +214,7 @@ function Product() {
 								<div className="peerStatsMiddleBestHash">Best Hash</div>
 								<div className="peerStatsMiddleBeshNumber">Best #</div>
 							</div>
-							<PeerList refresh={refreshPeerList} />
+							{!polkadotApiIsLoading && <PeerList refresh={refreshPeerList} />}
 						</div>
 						<div className="peerStatsBorder"></div>
 					</div>
@@ -221,7 +223,7 @@ function Product() {
 			<div className="blockTransactionContainer">
 				<div className="blockTransactionWrapper">
 					<div className="title">LATEST BLOCKS</div>
-					<BlockList type="block" />
+					{!polkadotApiIsLoading && <BlockList type="block" />}
 					<div className="seeAll">
 						View all <span>blocks</span>
 					</div>
