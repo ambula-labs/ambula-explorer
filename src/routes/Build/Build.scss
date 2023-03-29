@@ -15,7 +15,7 @@
 	.light2 {
 		position: absolute;
 		z-index: 2;
-		bottom: -120vh;
+		bottom: -205vh;
 		right: -20%;
 		height: 100vh;
 		background: #ff06515e;
@@ -26,6 +26,7 @@
 	.buildContainer {
 		height: 85vh;
 		width: 100%;
+		margin-bottom: 85vh;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -228,5 +229,96 @@
 	}
 
 	.learnMoreContainer {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		top: 85vh;
+		left: 0;
+		width: 100%;
+		height: 75vh;
+		padding: 0 2%;
+
+		.learnMoreBackground {
+			z-index: -1;
+			position: absolute;
+			width: 120%;
+			left: -10%;
+			height: 90%;
+			background: linear-gradient(180deg, rgba(255, 6, 81, 0.2) 0%, rgba(236, 16, 147, 0.2) 100%);
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 3px 13px 10px rgba(0, 0, 0, 0.25);
+			transform: rotate(3.31deg);
+		}
+
+		.learnMoreTitle {
+			display: flex;
+			margin-top: 3vh;
+			height: 15%;
+			flex-direction: column;
+			font-size: 1.2rem;
+			color: $text-grey;
+			font-family: $poppins;
+			line-height: 1.2;
+			margin-bottom: 30px;
+			span {
+				font-size: 2.2rem;
+				color: $background-grey;
+				font-weight: 600;
+			}
+		}
+
+		.learnMoreSteps {
+			display: flex;
+			flex-direction: row;
+			height: 50%;
+			width: 96%;
+
+			justify-content: space-between;
+
+			.learnMoreCard {
+				display: flex;
+				width: 28%;
+				height: 100%;
+				flex-direction: column;
+				.cardTitle {
+					align-self: center;
+					font-size: 1.2rem;
+					color: $background-grey;
+					font-family: $poppins;
+					height: 15%;
+					width: 100%;
+					text-align: center;
+				}
+
+				.imgContainer {
+					height: 65%;
+					display: flex;
+					align-items: flex-start;
+					justify-content: center;
+					img {
+						height: 100%;
+						max-width: 100%;
+					}
+
+					.img2 {
+						height: 90%;
+					}
+
+					.img3 {
+						height: 90%;
+					}
+				}
+
+				.cardDescription {
+					height: 20%;
+					margin-top: 10px;
+					font-size: 1rem;
+					color: $grey;
+					font-family: $inter;
+				}
+			}
+		}
+		.card1 {
+			width: 30%;
+		}
 	}
 }
