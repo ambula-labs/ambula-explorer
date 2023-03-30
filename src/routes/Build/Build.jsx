@@ -1,12 +1,16 @@
 import { useRef, useEffect } from "react";
 import lightVector from "@/assets/lightVector.svg";
 import AmbulaLogoLarge from "@/assets/AmbulaLogoLarge.svg";
+import AmbulaLogoShort from "@/assets/AmbulaLogoSmall.svg";
 import "./Build.scss";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import WaitingList from "@/assets/build/WaitingList.svg";
 import Message from "@/assets/build/Message.svg";
 import Configure from "@/assets/build/Configure.svg";
+import UserSVG from "@/assets/build/User.svg";
+import MailSVG from "@/assets/build/Mail.svg";
+import ArrowRightSVG from "@/assets/build/ArrowRight.svg";
 
 function Build() {
 	const screen2 = useRef(null);
@@ -16,13 +20,33 @@ function Build() {
 			block: "nearest",
 		});
 
+	const textMotion = {
+		rest: {
+			scale: 1,
+		},
+		hover: {
+			scale: 1.1,
+		},
+	};
+
+	const textMotion2 = {
+		rest: {
+			x: 0,
+			scale: 1,
+		},
+		hover: {
+			x: -10,
+			scale: 1.1,
+		},
+	};
+
 	return (
 		<div className="Build">
 			<div className="buildContainer">
 				<div className="leftContainer">
 					<div className="titleContainer">
 						Run your own
-						<span class="colored">Ambula Node</span>
+						<span className="colored">Ambula Node</span>
 					</div>
 					<div className="contentContainer">
 						Go green with Ambula <br /> Harness the power of crypto while <br />
@@ -76,6 +100,11 @@ function Build() {
 			</div>
 			<div className="learnMoreContainer">
 				<div className="learnMoreBackground"></div>
+				<div className="starContainer">
+					<div id="stars"></div>
+					<div id="stars2"></div>
+					<div id="stars3"></div>
+				</div>
 				<div className="learnMoreTitle">
 					Quick Guide
 					<span>Get started together</span>
@@ -111,6 +140,39 @@ function Build() {
 							connecting to the Ambula network. Ambula provides detailed instructions to guide you through the process.
 						</div>
 					</div>
+				</div>
+			</div>
+			<div className="waitingListFormContainer">
+				<div className="logoTopContainer">
+					<div className="logoTopSubcontainer">
+						<div className="logoTopSubsubcontainer">
+							<img src={AmbulaLogoShort} />
+						</div>
+					</div>
+				</div>
+				<div className="titleContainer">
+					<span>AMBULA CRYPTO SYSTEM</span>
+					<div className="title">
+						Join the Waiting list for the
+						<span>Official Release</span>
+					</div>
+				</div>
+
+				<div className="formContainer">
+					<div className="inputsContainer">
+						<motion.div initial="rest" whileHover="hover" animate="rest" className="inputContainer">
+							<motion.input variants={textMotion} placeholder="Full name..." />
+							<motion.img variants={textMotion2} src={UserSVG} />
+						</motion.div>
+						<motion.div initial="rest" whileHover="hover" animate="rest" className="inputContainer">
+							<motion.input variants={textMotion} placeholder="Email address..." />
+							<motion.img variants={textMotion2} src={MailSVG} />
+						</motion.div>
+					</div>
+					<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+						Continue
+						<img src={ArrowRightSVG} />
+					</motion.button>
 				</div>
 			</div>
 			<img src={lightVector} className="light" alt="Light vector" />
