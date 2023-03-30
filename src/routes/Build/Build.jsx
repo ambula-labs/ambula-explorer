@@ -13,12 +13,23 @@ import MailSVG from "@/assets/build/Mail.svg";
 import ArrowRightSVG from "@/assets/build/ArrowRight.svg";
 
 function Build() {
+	const screen = useRef(null);
 	const screen2 = useRef(null);
-	const executeScroll = () =>
-		screen2.current.scrollIntoView({
-			behavior: "smooth",
-			block: "nearest",
-		});
+	const executeScroll = (screenId) => {
+		if (screenId === 1) {
+			screen.current.scrollIntoView({
+				behavior: "smooth",
+				block: "nearest",
+				inline: "nearest",
+			});
+		} else {
+			screen2.current.scrollIntoView({
+				behavior: "smooth",
+				block: "nearest",
+				inline: "nearest",
+			});
+		}
+	};
 
 	const textMotion = {
 		rest: {
@@ -53,10 +64,10 @@ function Build() {
 						minimizing your environmental impact !
 					</div>
 					<div className="buttonContainer">
-						<motion.button className="startedBtn" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+						<motion.button className="startedBtn" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => executeScroll(2)}>
 							Get Started
 						</motion.button>
-						<motion.button className="learnBtn" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+						<motion.button className="learnBtn" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => executeScroll(1)}>
 							Learn More
 							<div className="border">&nbsp;</div>
 						</motion.button>
@@ -98,7 +109,7 @@ function Build() {
 					</div>
 				</div>
 			</div>
-			<div className="learnMoreContainer">
+			<div className="learnMoreContainer" ref={screen}>
 				<div className="learnMoreBackground"></div>
 				<div className="starContainer">
 					<div id="stars"></div>
@@ -142,7 +153,7 @@ function Build() {
 					</div>
 				</div>
 			</div>
-			<div className="waitingListFormContainer">
+			<div className="waitingListFormContainer" ref={screen2}>
 				<div className="logoTopContainer">
 					<div className="logoTopSubcontainer">
 						<div className="logoTopSubsubcontainer">
