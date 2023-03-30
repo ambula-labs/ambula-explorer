@@ -24,6 +24,7 @@ $poppins: "Poppins", sans-serif;
 html {
 	background: $background;
 	overflow-x: hidden;
+	height: -webkit-fill-available;
 }
 
 body {
@@ -156,4 +157,11 @@ body {
 .react-toggle--checked .react-toggle-thumb {
 	left: 27px;
 	border: rgb(161, 4, 51);
+}
+
+@supports (-webkit-touch-callout: none) {
+	body {
+		/* The hack for Safari */
+		min-height: -webkit-fill-available;
+	}
 }
