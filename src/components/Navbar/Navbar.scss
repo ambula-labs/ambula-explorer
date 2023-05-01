@@ -1,70 +1,139 @@
 .Navbar {
-    width: 96%;
-    height: 12vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0% 2%;
+	width: 96%;
+	height: 12vh;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0% 2%;
 
-    .ambulaLogo {
-        width: 15%;
-    }
+	.ambulaLogo {
+		width: 15%;
+	}
 
-    .rightContainer {
-        display: flex;
-        flex-direction: row;
-        border-radius: 25px;
-        gap: 20px;
-        align-items: center;
+	.hamburger-react {
+		display: none;
+		position: absolute !important;
+		right: 2%;
+	}
 
-        a {
-            text-decoration: none;
-            color: $text-grey;
-            font-family: $inter;
-        }
+	.rightContainer {
+		display: flex;
+		flex-direction: row;
+		border-radius: 25px;
+		gap: 20px;
+		align-items: center;
 
-        .activeRoute {
-            color: #fff;
-        }
-        
-        .enterApp {
-            position:relative;
-            padding: 2px 10px 3px 10px;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            vertical-align: middle;
+		a {
+			text-decoration: none;
+			color: $text-grey;
+			font-family: $inter;
+		}
 
-            &::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                border-radius: 25px;
-                padding: 2px; /* control the border thickness */
-                background: $gradient-ambula;
-                -webkit-mask: 
-                  linear-gradient(#fff 0 0) content-box, 
-                  linear-gradient(#fff 0 0);
-                -webkit-mask-composite: xor;
-                        mask-composite: exclude;
-                pointer-events: none;
-              }
+		.activeRoute {
+			color: #fff;
+		}
 
-            &:hover {
-                border-radius: 25px;
-                background: $gradient-ambula;
-            }
-        }
+		.enterApp {
+			position: relative;
+			padding: 2px 10px 3px 10px;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			vertical-align: middle;
 
-        .languageSelector {
-            display: flex;
-            flex-direction: row;
-            margin: 0 0 0 30px;
-            gap: 10px;
-            align-items: center;
-            color: $text-grey;
-            font-family: $inter;
-        }
-    }
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: 25px;
+				padding: 2px; /* control the border thickness */
+				background: $gradient-ambula;
+				-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				pointer-events: none;
+			}
+
+			&:hover {
+				border-radius: 25px;
+				background: $gradient-ambula;
+			}
+		}
+
+		.languageSelector {
+			display: flex;
+			flex-direction: row;
+			margin: 0 0 0 30px;
+			gap: 10px;
+			align-items: center;
+			color: $text-grey;
+			font-family: $inter;
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.Navbar {
+		z-index: 10;
+		height: 10vh;
+
+		.ambulaLogo {
+			z-index: 11;
+			margin-left: 1%;
+			width: 30%;
+		}
+
+		.hamburger-react {
+			display: flex;
+			z-index: 11;
+			color: white;
+			position: absolute !important;
+			right: 2%;
+		}
+
+		.rightContainer {
+			transition: all 0.5s ease-in-out;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 80lvh;
+			border-radius: 0;
+			background: rgba(255, 6, 81, 0.7);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			padding-bottom: 10lvh;
+			padding-top: 10lvh;
+			gap: 20px;
+			align-items: center;
+
+			a {
+				text-decoration: none;
+				color: black;
+				font-family: $poppins;
+				text-transform: uppercase;
+				font-size: 2.5rem;
+				font-weight: 600;
+			}
+
+			.activeRoute {
+				color: white;
+			}
+
+			.enterApp {
+				display: none;
+			}
+
+			.languageSelector {
+				display: none;
+			}
+		}
+
+		.closed {
+			display: none !important;
+		}
+	}
 }

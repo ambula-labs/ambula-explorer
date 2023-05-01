@@ -6,7 +6,7 @@
 		z-index: 2;
 		top: -80%;
 		left: -50%;
-		height: 100vh;
+		height: 100lvh;
 		background: #ff06515e;
 		width: 80%;
 		filter: blur(300px);
@@ -15,18 +15,18 @@
 	.light2 {
 		position: absolute;
 		z-index: 2;
-		bottom: -205vh;
+		bottom: -205lvh;
 		right: -20%;
-		height: 100vh;
+		height: 100lvh;
 		background: #ff06515e;
 		width: 80%;
 		filter: blur(300px);
 	}
 
 	.buildContainer {
-		height: 85vh;
+		height: 85lvh;
 		width: 100%;
-		margin-bottom: 70vh;
+		margin-bottom: 70lvh;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -165,8 +165,8 @@
 
 					.rond {
 						border-radius: 100%;
-						width: 2vh;
-						height: 2vh;
+						width: 2lvh;
+						height: 2lvh;
 						margin-left: 5px;
 						background: #313b53;
 					}
@@ -232,10 +232,10 @@
 		position: absolute;
 		display: flex;
 		flex-direction: column;
-		top: 85vh;
+		top: 85lvh;
 		left: 0;
 		width: 100%;
-		height: 75vh;
+		height: 75lvh;
 		padding: 0 2%;
 
 		.learnMoreBackground {
@@ -257,13 +257,13 @@
 			left: -10%;
 			overflow: hidden;
 			transform: rotate(3.31deg);
-			height: 200vh;
+			height: 200lvh;
 		}
 
 		.learnMoreTitle {
 			z-index: 2;
 			display: flex;
-			margin-top: 3vh;
+			margin-top: 3lvh;
 			height: 15%;
 			flex-direction: column;
 			font-size: 1.2rem;
@@ -336,7 +336,7 @@
 	}
 	.waitingListFormContainer {
 		position: relative;
-		height: 120vh;
+		height: 120lvh;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -347,16 +347,16 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 25vh;
-			height: 25vh;
+			width: 25lvh;
+			height: 25lvh;
 			border-radius: 100%;
 			background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #111111;
 			.logoTopSubcontainer {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				width: 21vh;
-				height: 21vh;
+				width: 21lvh;
+				height: 21lvh;
 				border-radius: 100%;
 				background: linear-gradient(0deg, rgba(255, 6, 81, 0.3), rgba(255, 6, 81, 0.3)), #111111;
 				.logoTopSubsubcontainer {
@@ -364,8 +364,8 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					width: 17vh;
-					height: 17vh;
+					width: 17lvh;
+					height: 17lvh;
 					border-radius: 100%;
 					background: linear-gradient(0deg, rgba(255, 6, 81, 0.4), rgba(255, 6, 81, 0.4)), #222222;
 					img {
@@ -442,7 +442,7 @@
 						border: 3px solid #5a1725;
 						padding-left: 17%;
 						padding-right: 4%;
-						height: 7vh;
+						height: 7lvh;
 						border-radius: 10px;
 					}
 				}
@@ -453,7 +453,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				height: 7vh;
+				height: 7lvh;
 				border-radius: 10px;
 				border: none;
 				outline: none;
@@ -818,8 +818,8 @@
 	.Build {
 		.buildContainer {
 			flex-direction: column;
-
-			margin-bottom: 105vh;
+			height: 85lvh;
+			margin-bottom: 105lvh;
 			.leftContainer {
 				width: 100%;
 				gap: 10px;
@@ -863,7 +863,7 @@
 			}
 		}
 		.learnMoreContainer {
-			height: 100vh;
+			height: 100lvh;
 			.learnMoreBackground {
 				height: 105%;
 			}
@@ -903,7 +903,7 @@
 			}
 		}
 		.waitingListFormContainer {
-			height: 80vh;
+			height: 80lvh;
 			.titleContainer {
 				font-size: 1rem;
 
@@ -919,13 +919,13 @@
 					.inputContainer {
 						input {
 							font-size: 1rem;
-							height: 5vh;
+							height: 5lvh;
 						}
 					}
 				}
 
 				button {
-					height: 5vh;
+					height: 5lvh;
 					font-size: 1rem;
 				}
 			}
