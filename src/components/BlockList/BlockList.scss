@@ -15,14 +15,7 @@
 			padding: 1% 2%;
 			border: 2px solid transparent;
 			border-radius: 10px;
-			background: linear-gradient(
-				360deg,
-				rgba(255, 255, 255, 0.2) 0%,
-				rgba(255, 255, 255, 0.1) 99.99%,
-				rgba(255, 255, 255, 0.25) 100%,
-				rgba(17, 17, 17, 0.25) 100%,
-				#ffffff 100%
-			);
+			background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #ffffff 100%);
 			backdrop-filter: blur(20px);
 			align-items: center;
 			display: flex;
@@ -39,14 +32,7 @@
 
 				.type {
 					width: 45%;
-					background: linear-gradient(
-						360deg,
-						rgba(255, 255, 255, 0.2) 0%,
-						rgba(255, 255, 255, 0.1) 99.99%,
-						rgba(255, 255, 255, 0.25) 100%,
-						rgba(17, 17, 17, 0.25) 100%,
-						#ffffff 100%
-					);
+					background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #ffffff 100%);
 					color: white;
 					font-family: $poppins;
 					font-weight: 600;
@@ -156,6 +142,67 @@
 			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
 			-webkit-mask-composite: xor;
 			mask-composite: exclude;
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.BlockList {
+		.BlockCard {
+			.BlockCardBackground {
+				.left {
+					.type {
+						font-size: 1.3rem;
+					}
+
+					.infos {
+						.infosTitle {
+							font-size: 1rem;
+						}
+						.infosDate {
+							font-size: 0.6rem;
+						}
+					}
+				}
+
+				.center {
+					margin-left: -5%;
+					.title {
+						font-size: 1rem;
+					}
+
+					.infos {
+						font-size: 0.6rem;
+
+						span {
+							font-size: 0.7rem;
+						}
+					}
+
+					.from {
+						font-size: 0.9rem;
+
+						span {
+							font-size: 0.7rem;
+						}
+					}
+
+					.to {
+						font-size: 0.9rem;
+
+						span {
+							font-size: 0.7rem;
+						}
+					}
+				}
+
+				.right {
+					margin-left: -15%;
+					span {
+						font-size: 0.9rem;
+					}
+				}
+			}
 		}
 	}
 }

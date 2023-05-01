@@ -3,23 +3,26 @@ import { NavLink } from "react-router-dom";
 import AmbulaLogoLarge from "@/assets/AmbulaLogoLarge.svg";
 import UK from "@/assets/UK.png";
 import { motion } from "framer-motion";
+import Hamburger from "hamburger-react";
 import "./Navbar.scss";
 
 function Navbar() {
+	const [isOpen, setOpen] = useState(false);
 	return (
 		<div className="Navbar">
 			<img src={AmbulaLogoLarge} className="ambulaLogo" alt="Ambula Logo Large" />
-			<div className="rightContainer">
-				<NavLink to="/" className={({ isActive }) => (isActive ? "activeRoute" : undefined)}>
+			<Hamburger className="hamburger" toggled={isOpen} toggle={setOpen} direction="left" />
+			<div className={isOpen ? "rightContainer" : "closed"}>
+				<NavLink to="/" onClick={() => setOpen(false)} className={({ isActive }) => (isActive ? "activeRoute" : undefined)}>
 					App
 				</NavLink>
-				<NavLink to="/product" className={({ isActive }) => (isActive ? "activeRoute" : undefined)}>
+				<NavLink to="/product" onClick={() => setOpen(false)} className={({ isActive }) => (isActive ? "activeRoute" : undefined)}>
 					Product
 				</NavLink>
-				<NavLink to="/build" className={({ isActive }) => (isActive ? "activeRoute" : undefined)}>
+				<NavLink to="/build" onClick={() => setOpen(false)} className={({ isActive }) => (isActive ? "activeRoute" : undefined)}>
 					Build
 				</NavLink>
-				<NavLink to="/about" className={({ isActive }) => (isActive ? "activeRoute" : undefined)}>
+				<NavLink to="/about" onClick={() => setOpen(false)} className={({ isActive }) => (isActive ? "activeRoute" : undefined)}>
 					About
 				</NavLink>
 				<motion.div

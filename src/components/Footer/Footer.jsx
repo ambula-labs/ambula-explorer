@@ -14,7 +14,9 @@ function Footer() {
 		<div className="Footer">
 			<div className="mailingContainer">
 				<div className="mailingTitle">Mailing List</div>
-				<div className="mailingDesc">Follow the latest updates. Unsubscribe at any time. Privacy policy</div>
+				<div className="mailingDesc">
+					Follow the latest updates. <span>Unsubscribe at any time. Privacy policy.</span>{" "}
+				</div>
 				<div className="inputContainer">
 					<input type="text" placeholder="Your email Here" />
 					<motion.i
@@ -41,28 +43,31 @@ function Footer() {
 						<img src={Youtube} className="appLogo youtube" alt="Youtube logo" />
 					</div>
 				</div>
-
-				<div className="linkContainer">
-					<NavLink to="/" className="linkTitle">
-						App
-					</NavLink>
-					<NavLink to="/">Main app</NavLink>
-					<NavLink to="/">Wallet</NavLink>
-				</div>
-				<div className="linkContainer">
-					<NavLink to="/" className="linkTitle">
-						Community
-					</NavLink>
-					<NavLink to="/">Discord</NavLink>
-					<NavLink to="/">Twitter</NavLink>
-					<NavLink to="/">Mail</NavLink>
-				</div>
-				<div className="linkContainer">
-					<NavLink to="/" className="linkTitle">
-						Learn
-					</NavLink>
-					<NavLink to="/">Youtube</NavLink>
-					<NavLink to="/">Documentation</NavLink>
+				<div className="rightContainer">
+					<div className="linkContainer">
+						<NavLink to="/" className="linkTitle">
+							App
+						</NavLink>
+						<NavLink to="/">Main app</NavLink>
+						<NavLink to="/">Wallet</NavLink>
+					</div>
+					<div className="linkContainer linkContainer2">
+						<NavLink to="/" className="linkTitle">
+							Community
+						</NavLink>
+						<NavLink to="/">Discord</NavLink>
+						<NavLink to="/">Twitter</NavLink>
+						<NavLink to="/" className="linkHide">
+							Mail
+						</NavLink>
+					</div>
+					<div className="linkContainer linkContainer3">
+						<NavLink to="/" className="linkTitle">
+							Learn
+						</NavLink>
+						<NavLink to="/">Youtube</NavLink>
+						<NavLink to="/">Documentation</NavLink>
+					</div>
 				</div>
 			</div>
 		</div>

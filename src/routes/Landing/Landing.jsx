@@ -81,9 +81,7 @@ function Landing() {
 							<TextAnim text="Proof of Interaction" />
 						</div>
 					</div>
-					<div className="content">
-						Get started with a new client-puzzle called Proof-of-Interaction to define a new energy-efficient Blockchain protocol.
-					</div>
+					<div className="content">Get started with a new client-puzzle called Proof-of-Interaction to define a new energy-efficient Blockchain protocol.</div>
 					<motion.button
 						className="initiateButton"
 						whileHover={{
@@ -132,7 +130,7 @@ function Landing() {
 			<img src={lightVector} className="light2" alt="Light vector" />
 			<div className="screen screen2" ref={screen2}>
 				<div className="titleScreen">
-					The <span>Environmental•Future</span> is now
+					The <span>Environmental • Future</span> is now
 				</div>
 			</div>
 			<div className="screen screen3">
@@ -171,31 +169,13 @@ function Landing() {
 					</div>
 				</div>
 				<motion.div animate={ctrls} className="growingFastContainer" variants={growingFastContainerVariants}>
-					<motion.div
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.9 }}
-						variants={growingFastCardAnimation}
-						className="growingFastCard"
-						layout
-					>
+					<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard" layout>
 						<img src={lightVector} className="growingFastLight" alt="Light vector" />
 					</motion.div>
-					<motion.div
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.9 }}
-						variants={growingFastCardAnimation}
-						className="growingFastCard big"
-						layout
-					>
+					<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard big" layout>
 						<img src={lightVector} className="growingFastLight" alt="Light vector" />
 					</motion.div>
-					<motion.div
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.9 }}
-						variants={growingFastCardAnimation}
-						className="growingFastCard"
-						layout
-					>
+					<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} variants={growingFastCardAnimation} className="growingFastCard" layout>
 						<img src={lightVector} className="growingFastLight" alt="Light vector" />
 					</motion.div>
 				</motion.div>

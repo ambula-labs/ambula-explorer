@@ -10,13 +10,7 @@ $gradient-foncé: rgba(34, 34, 34, 1);
 $background: linear-gradient(0deg, rgba(255, 6, 81, 0.1), rgba(255, 6, 81, 0.1)), #111111;
 
 $gradient-ambula: linear-gradient(93.31deg, #ff0651 -22.49%, #ec1093 113.5%);
-$gradient-white-red: linear-gradient(
-	94.58deg,
-	#ffffff 15.65%,
-	rgba(255, 6, 81, 0.2) 42.89%,
-	rgba(255, 6, 81, 0.4) 79.68%,
-	rgba(255, 6, 81, 0.9) 100%
-);
+$gradient-white-red: linear-gradient(94.58deg, #ffffff 15.65%, rgba(255, 6, 81, 0.2) 42.89%, rgba(255, 6, 81, 0.4) 79.68%, rgba(255, 6, 81, 0.9) 100%);
 
 $inter: "Inter", sans-serif;
 $poppins: "Poppins", sans-serif;
@@ -156,4 +150,11 @@ body {
 .react-toggle--checked .react-toggle-thumb {
 	left: 27px;
 	border: rgb(161, 4, 51);
+}
+
+@supports (-webkit-touch-callout: none) {
+	body {
+		/* The hack for Safari */
+		min-height: -webkit-fill-available;
+	}
 }

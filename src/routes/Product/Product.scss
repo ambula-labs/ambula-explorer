@@ -1,7 +1,7 @@
 .Product {
 	padding: 0 5% 0 5%;
 	.cryptoHeader {
-		height: 20vh;
+		height: 20lvh;
 		position: relative;
 		display: flex;
 		flex-direction: row;
@@ -90,7 +90,7 @@
 	}
 
 	.cryptoStats {
-		height: 60vh;
+		height: 60lvh;
 		z-index: 5;
 		position: relative;
 		display: flex;
@@ -118,14 +118,7 @@
 			padding: 1% 2%;
 			border: 2px solid transparent;
 			border-radius: 25px;
-			background: linear-gradient(
-				360deg,
-				rgba(255, 255, 255, 0.2) 0%,
-				rgba(255, 255, 255, 0.1) 99.99%,
-				rgba(255, 255, 255, 0.25) 100%,
-				rgba(17, 17, 17, 0.25) 100%,
-				#ffffff 100%
-			);
+			background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #ffffff 100%);
 			backdrop-filter: blur(20px);
 			align-items: center;
 			display: flex;
@@ -260,7 +253,7 @@
 										z-index: 2;
 										top: 30%;
 										right: 50%;
-										height: 100vh;
+										height: 100lvh;
 										background: #9807f8;
 										transform: none;
 										filter: blur(30px);
@@ -425,14 +418,7 @@
 					z-index: 5;
 					border: 2px solid transparent;
 					border-radius: 25px;
-					background: linear-gradient(
-						360deg,
-						rgba(255, 255, 255, 0.2) 0%,
-						rgba(255, 255, 255, 0.1) 99.99%,
-						rgba(255, 255, 255, 0.25) 100%,
-						rgba(17, 17, 17, 0.25) 100%,
-						#ffffff 100%
-					);
+					background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #ffffff 100%);
 					backdrop-filter: blur(20px);
 					align-items: center;
 					display: flex;
@@ -516,7 +502,7 @@
 	}
 
 	.blockTransactionContainer {
-		height: 80vh;
+		height: 80lvh;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -559,7 +545,7 @@
 		z-index: 2;
 		top: 10%;
 		right: -10%;
-		height: 100vh;
+		height: 100lvh;
 		background: #ff06515e;
 		width: 80%;
 		filter: blur(300px);
@@ -571,5 +557,110 @@
 		background-color: rgba(255, 255, 255, 0.5);
 		-webkit-backdrop-filter: blur(2em);
 		backdrop-filter: blur(2em);
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.Product {
+		.cryptoHeader {
+			height: 10lvh;
+			width: 100%;
+			margin-bottom: 2lvh;
+
+			.leftHeader {
+				width: 100%;
+
+				.titleHeader {
+					color: $text-grey;
+					font-size: 0.7rem;
+				}
+
+				.informationHeader {
+					width: 100%;
+
+					.informationContainer {
+						.informationTitle {
+							font-size: 1.5rem;
+						}
+						.informationContent {
+							font-size: 2rem;
+
+							.progress {
+								font-size: 0.8rem;
+							}
+						}
+					}
+				}
+			}
+
+			.rightHeader {
+				display: none;
+			}
+		}
+
+		.cryptoStats {
+			height: 50lvh;
+			z-index: 5;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			.statsBar {
+				display: none;
+			}
+			.statsBarBackground {
+				display: none;
+			}
+
+			.statsBottom {
+				height: 100%;
+
+				.statsOrder {
+					display: none;
+				}
+
+				.peerStats {
+					width: 100%;
+
+					.peerStatsBackground {
+						height: 98%;
+
+						.peerStatsTop {
+							.peerStatsTopCard {
+								.peerStatsTopCardTitle {
+									font-size: 0.7rem;
+								}
+
+								.peerStatsTopCardContent {
+									font-size: 1.1rem;
+
+									span {
+										font-size: 1rem;
+									}
+								}
+							}
+						}
+
+						.peerStatsMiddle {
+							align-items: center;
+							.peerStatsMiddleConnectedPeer {
+								font-size: 0.9rem;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.blockTransactionContainer {
+			height: 160lvh;
+			flex-direction: column;
+
+			.blockTransactionWrapper {
+				width: 100%;
+				height: 50%;
+			}
+		}
 	}
 }
