@@ -17,8 +17,12 @@ import TransactionCreditCard from "@/assets/TransactionCreditCardRose.png";
 import TransactionPhone from "@/assets/TransactionPhoneRose.png";
 import "./Landing.scss";
 import AmbulaModel from "../../components/Models/AmubulaModel";
+import useAdminParamStore from "../../stores/useAdminParamStore";
 
 function Landing() {
+	const setIsAdminPage = useAdminParamStore((state) => state.setIsAdminPage);
+	setIsAdminPage(false);
+
 	const ctrls = useAnimation();
 
 	//Animation utilisée pour nos Cards présentes dans la liste fast growing community

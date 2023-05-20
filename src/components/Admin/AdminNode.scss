@@ -1,0 +1,99 @@
+.AdminNode {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.title {
+		height: 1.7vh;
+		font-size: 1.7rem;
+		height: auto;
+		font-weight: 600;
+		margin-bottom: 5px;
+	}
+
+	.AdminNodeWrapper {
+		display: flex;
+		flex-direction: column;
+		--tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+		width: 100%;
+
+		.actionContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			width: 20% !important;
+
+			.tooltip {
+				background: red;
+			}
+
+			img {
+				height: 3vh;
+				filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(184deg) brightness(100%) contrast(100%);
+
+				&:hover {
+					filter: invert(17%) sepia(94%) saturate(4622%) hue-rotate(334deg) brightness(97%) contrast(108%);
+				}
+			}
+
+			.disabled {
+				img {
+					filter: invert(80%) sepia(0%) saturate(0%) hue-rotate(184deg) brightness(80%) contrast(80%);
+				}
+			}
+		}
+		.AdminNodeHeader {
+			background: rgba(255, 6, 81, 0.1);
+			width: 100%;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			letter-spacing: 0.05em;
+			font-family: $inter;
+			font-size: 0.9rem;
+			line-height: 1rem;
+			height: 6vh;
+			font-weight: 500;
+
+			.AdminNodeHeaderPart {
+				width: 15%;
+				text-align: center;
+				color: rgb(105, 71, 71);
+			}
+		}
+
+		.AdminNodeContainer {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-bottom-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+			background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #222222;
+			transition: height 1s;
+
+			.AdminNodeInfo {
+				width: 100%;
+				height: 100%;
+				height: 8vh;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.AdminNodeContainerPart {
+				width: 15%;
+				text-align: center;
+			}
+
+			.logContainer {
+				height: 25vh;
+			}
+		}
+	}
+}

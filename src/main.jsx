@@ -5,6 +5,7 @@ import Landing from "./routes/Landing/Landing.jsx";
 import Product from "./routes/Product/Product.jsx";
 import Build from "./routes/Build/Build.jsx";
 import About from "./routes/About/About";
+import Admin from "./routes/Admin/Admin";
 import Error from "./routes/Error/Error.jsx";
 import { ParallaxProvider } from "react-scroll-parallax";
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
 			{
 				path: "about",
 				element: <About />,
+			},
+			{
+				path: "admin",
+				element: <Admin />,
 			},
 		],
 	},

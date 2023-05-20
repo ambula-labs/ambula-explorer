@@ -20,7 +20,7 @@ function Footer() {
 				<div className="inputContainer">
 					<input type="text" placeholder="Your email Here" />
 					<motion.i
-						class="fa-solid fa-arrow-right"
+						className="fa-solid fa-arrow-right"
 						whileHover={{
 							scale: 1.1,
 						}}
@@ -31,10 +31,7 @@ function Footer() {
 			<div className="bottomContainer">
 				<div className="leftContainer">
 					<img src={AmbulaLogoLarge} className="ambulaLogo" alt="Ambula Logo Large" />
-					<div className="content">
-						Ambula's objective is to carry out a research project implementing the consensus algorithm "Proof of Interaction". The main
-						challenge related to this work will be to meet the technical challenges related to the implementation.
-					</div>
+					<div className="content">Ambula's objective is to carry out a research project implementing the consensus algorithm "Proof of Interaction". The main challenge related to this work will be to meet the technical challenges related to the implementation.</div>
 					<div className="appLogoContainer">
 						<img src={Github} className="appLogo github" alt="Github logo" />
 						<img src={Discord} className="appLogo" alt="Discord logo" />

@@ -20,6 +20,7 @@
 		"@substra-hooks/core": "^0.0.58",
 		"@substrate/api-sidecar": "^14.4.1",
 		"@substrate/connect": "^0.7.20",
+		"@tippyjs/react": "^4.2.6",
 		"drei": "^2.2.21",
 		"framer-motion": "^10.0.0",
 		"hamburger-react": "^2.5.0",
