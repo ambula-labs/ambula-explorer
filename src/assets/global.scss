@@ -18,6 +18,7 @@ $poppins: "Poppins", sans-serif;
 html {
 	background: $background;
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 body {

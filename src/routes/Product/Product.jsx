@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import reactLogo from "@/assets/react.svg";
 import lightVector from "@/assets/lightVector.svg";
 import violetLightVector from "@/assets/violetLightVector.svg";
 import AmbulaLogoShort from "@/assets/AmbulaLogoSmall.svg";
@@ -13,8 +12,14 @@ import "./Product.scss";
 import usePeerListStore from "../../stores/usePeerListStore";
 import PeerList from "../../components/PeerList/PeerList";
 import usePolkadotApiStore from "../../stores/usePolkadotApiStore";
+import useAdminParamStore from "../../stores/useAdminParamStore";
 
 function Product() {
+	const setIsAdminPage = useAdminParamStore((state) => state.setIsAdminPage);
+	useEffect(() => {
+		setIsAdminPage(false);
+	}, []);
+
 	const [isCurrentMarketPrice, setIsCurrentMarketPrice] = useState(true);
 	const polkadotApiIsLoading = usePolkadotApiStore((state) => state.loading);
 	const storedPeerList = usePeerListStore((state) => state.peerList);

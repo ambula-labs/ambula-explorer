@@ -51,7 +51,13 @@ function BlockList({ type }) {
 
 	//Animation utilisée pour nos Cards présentes dans la liste des derniers blocks
 	const animations = {
-		initial: { scale: 0, opacity: 0 },
+		initial: {
+			scale: 0,
+			opacity: 0,
+			transition: {
+				delayChildren: 0.5,
+			},
+		},
 		animate: { scale: 1, opacity: 1 },
 		exit: { scale: 0, opacity: 0 },
 	};

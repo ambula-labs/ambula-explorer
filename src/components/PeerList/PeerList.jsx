@@ -51,6 +51,10 @@ function PeerList(props) {
 	async function getPeerInformation() {
 		// Retrieve the list of peers
 		const peers = await polkadotApi.rpc.system.peers();
+		const proposal = polkadotApi.tx.democracy.propose(proposalHash, 0, changes);
+		const proposalHash = await proposal.signAndSend(account);
+
+		console.log(peers[0]);
 
 		peers.map((peer) => {
 			addPeer(new Peer(peer.roles, peer.peerId, peer.bestHash, peer.bestNumber));
