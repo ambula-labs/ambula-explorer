@@ -1,0 +1,53 @@
+.latestActivities {
+	margin-top: 10%;
+	padding: 2%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	font-family: $poppins;
+
+	.activityTitle {
+		font-size: 1.2rem;
+		color: white;
+	}
+
+	.activityList {
+		margin-top: 5%;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		.activityCard {
+			width: 96%;
+			margin-bottom: 4%;
+			display: flex;
+			flex-direction: row-reverse;
+			--tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+			box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+			.activityHeader {
+				background: rgba(255, 6, 81, 0.1);
+				padding: 2% 2%;
+				width: 20%;
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+				color: rgb(105, 71, 71);
+				height: 80%;
+				display: flex;
+				align-items: center;
+			}
+
+			.activityContent {
+				background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #222222;
+				padding: 2% 4%;
+				width: 70%;
+				border-bottom-left-radius: 10px;
+				border-top-left-radius: 10px;
+				color: white;
+				height: 80%;
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}

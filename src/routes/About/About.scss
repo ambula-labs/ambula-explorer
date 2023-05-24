@@ -1,0 +1,657 @@
+.About {
+	padding: 0 2%;
+	position: relative;
+	.light {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		right: -10%;
+		height: 100vh;
+		background: #ff06515e;
+		width: 80%;
+		filter: blur(300px);
+	}
+
+	.light2 {
+		position: absolute;
+		z-index: 2;
+		bottom: -120vh;
+		right: -20%;
+		height: 100vh;
+		background: #ff06515e;
+		width: 80%;
+		filter: blur(300px);
+	}
+
+	.aboutContainer {
+		height: 88vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		.aboutHeader {
+			margin-top: 10px;
+			height: 20%;
+
+			.subtitle {
+				font-family: $inter;
+				color: $text-grey;
+				font-size: 0.8rem;
+				margin-bottom: 5px;
+			}
+
+			.title {
+				font-family: $poppins;
+				font-weight: 600;
+				color: white;
+				font-size: 4rem;
+				line-height: 4.1rem;
+				display: flex;
+				flex-direction: column;
+
+				.betterFuture {
+					background: -webkit-linear-gradient(91.14deg, #ff0651 -11.1%, #e215b4 113.22%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+			}
+		}
+
+		.aboutContent {
+			height: calc(76% - 10px);
+			width: 70%;
+			padding: 2% 0;
+			font-family: $poppins;
+			font-weight: 500;
+			color: $text-grey;
+			font-size: 1.2rem;
+			align-self: center;
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	.roadmapContainer {
+		height: 120vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		.roadmapHeader {
+			margin-top: 2%;
+			height: 20%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 5px;
+			.ligne {
+				width: 7%;
+				height: 5px;
+				border-radius: 25px;
+				background-color: $ambula-red;
+				border: none;
+				outline: none;
+			}
+
+			.title {
+				font-family: $poppins;
+				font-weight: 600;
+				color: white;
+				font-size: 4rem;
+			}
+		}
+
+		.roadmapContent {
+			height: 80%;
+			position: relative;
+
+			.ligneCentrale {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 6px;
+				height: 100%;
+				background: linear-gradient(180deg, rgba(255, 6, 81, 0) 0%, #ff0651 12.5%, #ec1093 88.02%, rgba(236, 16, 147, 0) 100%);
+			}
+
+			.rond {
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 20px;
+				height: 20px;
+				box-shadow: 0px 0px 10px 3px #ff0651;
+				background: #ff0651;
+				border-radius: 50%;
+			}
+
+			.currentRond {
+				position: absolute;
+				top: 10%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 30px;
+				height: 30px;
+				background: white;
+				border-radius: 50%;
+			}
+
+			.rond1 {
+				top: 10%;
+			}
+			.rond2 {
+				top: 40%;
+			}
+			.rond3 {
+				top: 70%;
+			}
+			.rond4 {
+				top: 93%;
+			}
+
+			.phaseCard {
+				position: absolute;
+				background: linear-gradient(137.55deg, rgba(255, 6, 81, 0.8) 0%, rgba(236, 16, 147, 0.8) 69.18%);
+				border-radius: 10px;
+				width: 26%;
+				padding: 1.5% 2%;
+				font-family: $poppins;
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+
+				.phaseTitle {
+					color: white;
+					font-size: 1.5rem;
+					line-height: 25px;
+					font-weight: 600;
+					align-self: center;
+					text-align: center;
+				}
+
+				.phaseDescription {
+					color: $text-grey;
+					font-size: 0.8rem;
+					font-weight: 500;
+				}
+			}
+
+			.phaseCard1 {
+				left: 10%;
+				top: 0%;
+			}
+			.phaseCard2 {
+				padding: 1% 2%;
+				width: 28%;
+				right: 8%;
+				top: 25%;
+			}
+			.phaseCard3 {
+				left: 10%;
+				top: 60%;
+			}
+			.phaseCard4 {
+				right: 10%;
+				top: 85%;
+
+				.phaseDescription {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.buyContainer {
+		margin-top: 30vh;
+		height: 165vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		.buyHeader {
+			margin-top: 2%;
+			height: 24vh;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 25px;
+			.ligne {
+				width: 7%;
+				height: 5px;
+				border-radius: 25px;
+				background-color: $ambula-red;
+				border: none;
+				outline: none;
+			}
+
+			.title {
+				font-family: $poppins;
+				font-weight: 600;
+				color: white;
+				font-size: 4rem;
+				display: flex;
+				flex-direction: column;
+				line-height: 4.3rem;
+			}
+
+			.subtitle {
+				margin-top: 0px;
+				font-family: $inter;
+				color: $text-grey;
+				font-size: 1.1rem;
+				margin-bottom: 5px;
+				width: 30%;
+			}
+
+			.boxDecoration {
+				position: absolute;
+				width: 50%;
+				height: 20%;
+				background: $gradient-ambula;
+				border-top-left-radius: 20vw;
+				border-bottom-left-radius: 20vw;
+				right: -2%;
+				top: -2%;
+			}
+		}
+
+		.stepContainer {
+			margin-top: 10vh;
+			padding: 10%;
+			height: 141vh;
+			position: relative;
+
+			.stepCardBorder {
+				width: 40%;
+				padding: calc(1% - 2px) 2%;
+				position: absolute;
+				border-radius: 25px;
+
+				font-family: $poppins;
+				border: 2px solid transparent;
+				background: linear-gradient(122.99deg, #ff0651 -17.74%, #ff0651 3.68%, rgba(255, 6, 81, 0) 51.97%) border-box;
+
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+			}
+
+			.stepCard {
+				//height: calc(18vh + 2px);
+
+				width: calc(40% + 2px);
+				position: absolute;
+				padding: 1% 2%;
+				background: linear-gradient(137.55deg, rgba(255, 6, 81, 0.4) 0%, rgba(236, 16, 147, 0.4) 69.18%);
+				backdrop-filter: blur(2px);
+				border-radius: 25px;
+				font-family: $poppins;
+			}
+
+			.topContainer {
+				font-size: 1.8rem;
+				font-weight: 600;
+				padding-left: 13%;
+				color: white;
+				display: flex;
+				align-items: center;
+				margin-bottom: 2%;
+
+				span {
+					position: absolute;
+					margin-left: -10%;
+					font-size: 2.5rem;
+					background: $gradient-ambula;
+					cursor: pointer;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+			}
+
+			.bottomContainer {
+				color: $text-grey;
+				padding-left: 13%;
+				font-size: 1rem;
+				span {
+					display: inline-block;
+					background: $gradient-ambula;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					text-decoration: underline;
+					line-height: 1.2;
+					cursor: pointer;
+					border-bottom: 2px solid $ambula-red;
+				}
+			}
+
+			.stepCard1 {
+				top: 10%;
+				left: 10%;
+			}
+			.stepCard2 {
+				top: 30%;
+				right: 10%;
+			}
+			.stepCard3 {
+				top: 50%;
+				left: 10%;
+			}
+			.stepCard4 {
+				top: 70%;
+				right: 10%;
+			}
+			.stepCardLink1 {
+				box-sizing: border-box;
+				position: absolute;
+				width: 15%;
+				height: calc(16vh + 6px);
+				left: calc(54% + 2px);
+				top: calc(10% + 9vh);
+				border-width: 8px, 0px, 0px, 8px;
+				border-top: 8px solid transparent;
+				border-right: 8px solid transparent;
+				background: linear-gradient(180deg, rgba(255, 6, 81, 0.4) 0%, rgba(236, 16, 147, 0.4) 100%) border-box;
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				border-radius: 0px 75px 0px 0px;
+			}
+			.stepCardLink2 {
+				box-sizing: border-box;
+				position: absolute;
+				width: 15%;
+				height: calc(16vh + 6px);
+				right: calc(54% + 2px);
+				top: calc(30% + 9vh);
+				border-width: 8px, 0px, 0px, 8px;
+				border-top: 8px solid transparent;
+				border-left: 8px solid transparent;
+				background: linear-gradient(180deg, rgba(255, 6, 81, 0.4) 0%, rgba(236, 16, 147, 0.4) 100%) border-box;
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				border-radius: 75px 0px 0px 0px;
+			}
+			.stepCardLink3 {
+				box-sizing: border-box;
+				position: absolute;
+				width: 15%;
+				height: calc(16vh + 6px);
+				left: calc(54% + 2px);
+				top: calc(50% + 9vh);
+				border-width: 8px, 0px, 0px, 8px;
+				border-top: 8px solid transparent;
+				border-right: 8px solid transparent;
+				background: linear-gradient(180deg, rgba(255, 6, 81, 0.4) 0%, rgba(236, 16, 147, 0.4) 100%) border-box;
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				border-radius: 0px 75px 0px 0px;
+			}
+			.stepCardPuce {
+				position: absolute;
+				width: 5vh;
+				height: 5vh;
+				background: #ff0651;
+				border-radius: 50%;
+				box-shadow: 0px 0px 0px 25px rgba(255, 6, 81, 0.1);
+			}
+			.stepCardPuce1 {
+				right: -33%;
+				bottom: 20%;
+			}
+			.stepCardPuce2 {
+				left: -33%;
+				bottom: 20%;
+			}
+			.stepCardPuce3 {
+				right: -33%;
+				bottom: 10%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.About {
+		.aboutContainer {
+			height: 88vh;
+
+			.aboutHeader {
+				margin-top: 10px;
+				height: 16%;
+
+				.title {
+					font-size: 2.3rem;
+					line-height: 2.2rem;
+				}
+			}
+
+			.aboutContent {
+				width: 100%;
+				font-size: 1rem;
+				text-align: justify;
+			}
+		}
+
+		.roadmapContainer {
+			.roadmapHeader {
+				height: 10%;
+				.ligne {
+					width: 20%;
+				}
+
+				.title {
+					font-family: $poppins;
+					font-weight: 600;
+					color: white;
+					font-size: 2rem;
+				}
+			}
+
+			.roadmapContent {
+				height: 90%;
+				position: relative;
+
+				.ligneCentrale {
+					left: 5%;
+				}
+
+				.rond {
+					left: 5%;
+				}
+
+				.currentRond {
+					left: 5%;
+				}
+
+				.rond1 {
+					top: 10%;
+				}
+				.rond2 {
+					top: 40%;
+				}
+				.rond3 {
+					top: 70%;
+				}
+				.rond4 {
+					top: 93%;
+				}
+
+				.phaseCard {
+					position: absolute;
+					background: linear-gradient(137.55deg, rgba(255, 6, 81, 0.8) 0%, rgba(236, 16, 147, 0.8) 69.18%);
+					border-radius: 10px;
+					width: 80%;
+					padding: 1.5% 2%;
+					font-family: $poppins;
+					display: flex;
+					flex-direction: column;
+					gap: 15px;
+
+					.phaseTitle {
+						color: white;
+						font-size: 1.5rem;
+						line-height: 25px;
+						font-weight: 600;
+						align-self: center;
+						text-align: center;
+					}
+
+					.phaseDescription {
+						color: $text-grey;
+						text-align: justify;
+						font-size: 0.8rem;
+						font-weight: 500;
+					}
+				}
+
+				.phaseCard1 {
+					left: 15%;
+					top: 3%;
+				}
+				.phaseCard2 {
+					width: 80%;
+					left: 15%;
+					top: 28%;
+				}
+				.phaseCard3 {
+					left: 15%;
+					top: 63%;
+				}
+				.phaseCard4 {
+					left: 15%;
+					top: 88%;
+
+					.phaseDescription {
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		.buyContainer {
+			margin-top: 15vh;
+			margin-bottom: -40vh;
+
+			.buyHeader {
+				gap: 20px;
+				.ligne {
+					width: 20%;
+				}
+
+				.title {
+					font-size: 2rem;
+					line-height: 2.3rem;
+				}
+
+				.subtitle {
+					margin-top: -10px;
+					font-size: 0.7rem;
+					width: 60%;
+				}
+
+				.boxDecoration {
+					width: 40%;
+					height: 8%;
+				}
+			}
+
+			.stepContainer {
+				margin-top: 0vh;
+				padding: 0%;
+				justify-content: center;
+				height: 120vh;
+				align-items: center;
+				.stepCardBorder {
+					width: 80%;
+				}
+
+				.stepCard {
+					width: 80%;
+				}
+
+				.topContainer {
+					font-size: 1.2rem;
+					font-weight: 600;
+					padding-left: 13%;
+					color: white;
+					display: flex;
+					align-items: center;
+					margin-bottom: 2%;
+
+					span {
+						position: absolute;
+						margin-left: -10%;
+						font-size: 2rem;
+						background: $gradient-ambula;
+						cursor: pointer;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+					}
+				}
+
+				.bottomContainer {
+					color: $text-grey;
+					padding-left: 13%;
+					font-size: 0.7rem;
+				}
+
+				.stepCard1 {
+					top: 0%;
+					left: 8%;
+				}
+				.stepCard2 {
+					top: 20%;
+					left: 8%;
+				}
+				.stepCard3 {
+					top: 40%;
+					left: 8%;
+				}
+				.stepCard4 {
+					top: 60%;
+					left: 8%;
+				}
+				.stepCardLink1 {
+					display: none;
+				}
+				.stepCardLink2 {
+					display: none;
+				}
+				.stepCardLink3 {
+					display: none;
+				}
+				.stepCardPuce {
+					position: absolute;
+					width: 3vh;
+					height: 3vh;
+					background: #ff0651;
+					border-radius: 50%;
+					box-shadow: 0px 0px 0px 12.5px rgba(255, 6, 81, 0.1);
+				}
+				.stepCardPuce1 {
+					left: 50%;
+					transform: translate(-50%, 0%);
+					bottom: -75%;
+				}
+				.stepCardPuce2 {
+					left: 50%;
+					transform: translate(-50%, 0%);
+					bottom: -75%;
+				}
+				.stepCardPuce3 {
+					left: 50%;
+					transform: translate(-50%, 0%);
+					bottom: -75%;
+				}
+			}
+		}
+	}
+}

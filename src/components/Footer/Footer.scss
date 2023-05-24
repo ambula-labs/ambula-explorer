@@ -1,0 +1,276 @@
+.Footer {
+	width: 96%;
+	height: 43vh;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 3% 2%;
+
+	.mailingContainer {
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: flex-end;
+		width: 50%;
+		padding-right: 5%;
+		margin-bottom: 100px;
+		color: #fff;
+		font-family: $inter;
+
+		.mailingTitle {
+			font-size: 2rem;
+			font-weight: 600;
+		}
+
+		.mailingDesc {
+			font-size: 0.8rem;
+			color: $text-grey;
+			font-family: $inter;
+			display: flex;
+			flex-direction: row;
+			gap: 5px;
+		}
+
+		.inputContainer {
+			width: 100%;
+			z-index: 3;
+			position: relative;
+			padding: 9px 10px 10px 10px;
+			display: flex;
+			align-items: center;
+			font-size: 30px;
+
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: 50px;
+				padding: 3px; /* control the border thickness */
+				background: $gradient-ambula;
+				-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				pointer-events: none;
+			}
+
+			input {
+				background-color: transparent;
+				width: 100%;
+				border: none;
+				font-family: $poppins;
+				font-weight: 600;
+				color: white;
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			.fa-arrow-right {
+				font-size: 1.2rem;
+				background: $gradient-ambula;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				display: initial;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.bottomContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.leftContainer {
+			width: 50%;
+			.ambulaLogo {
+				width: 15vw;
+			}
+
+			.content {
+				font-family: $inter;
+				font-weight: 200;
+				font-size: 0.8rem;
+				color: $text-grey;
+				width: 80%;
+				margin-bottom: 5px;
+			}
+
+			.appLogoContainer {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 20px;
+				width: 50%;
+
+				.appLogo {
+					width: 15%;
+					filter: brightness(0) invert(1);
+					cursor: pointer;
+				}
+
+				.github {
+					margin-right: 5px;
+					width: 12% !important;
+				}
+
+				.youtube {
+					margin-left: -5px;
+					width: 20% !important;
+				}
+			}
+		}
+
+		.rightContainer {
+			display: flex;
+			width: 50%;
+			justify-content: space-around;
+			.linkContainer {
+				width: 15%;
+
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+
+				.linkTitle {
+					color: #fff;
+					font-size: 1rem;
+					font-family: $poppins;
+					font-weight: 600;
+				}
+				a {
+					text-decoration: none;
+					color: $text-grey;
+					font-family: $inter;
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.Footer {
+		width: 96%;
+		height: 35vh;
+		justify-content: flex-start;
+		gap: 10px;
+		padding: 3% 2%;
+
+		.mailingContainer {
+			gap: 5px;
+			width: 100%;
+			margin-right: -4%;
+			margin-bottom: 0px;
+
+			.mailingTitle {
+				font-size: 1rem;
+				font-weight: 600;
+			}
+
+			.mailingDesc {
+				font-size: 0.7rem;
+				text-align: right;
+				margin-bottom: 5px;
+				gap: 2px;
+				flex-direction: column;
+			}
+
+			.inputContainer {
+				width: 50%;
+				padding: 2px 9px 2px 9px;
+				font-size: 0.8rem;
+				font-weight: 500;
+
+				input {
+					font-size: 0.75rem;
+				}
+
+				&::before {
+					padding: 2px;
+				}
+
+				.fa-arrow-right {
+					font-size: 0.8rem;
+				}
+			}
+		}
+
+		.bottomContainer {
+			flex-direction: column;
+
+			.leftContainer {
+				width: 100%;
+				.ambulaLogo {
+					width: 15vw;
+				}
+
+				.content {
+					font-size: 0.7rem;
+					width: 100%;
+					margin-bottom: 0px;
+					text-align: justify;
+				}
+
+				.appLogoContainer {
+					justify-content: space-around;
+					width: 100%;
+
+					.appLogo {
+						width: 8%;
+						filter: invert(10%) sepia(59%) saturate(2564%) hue-rotate(325deg) brightness(94%) contrast(94%);
+					}
+
+					.github {
+						margin-right: 5px;
+						width: 6% !important;
+					}
+
+					.youtube {
+						margin-left: -5px;
+						width: 11% !important;
+					}
+				}
+			}
+			.rightContainer {
+				margin-top: 5px;
+				display: flex;
+				width: 100%;
+
+				.linkContainer {
+					width: 30%;
+					gap: 10px;
+					display: flex;
+					flex-direction: column;
+
+					.linkTitle {
+						color: #fff;
+						font-size: 1rem;
+						font-family: $poppins;
+						font-weight: 600;
+					}
+					a {
+						text-decoration: none;
+						color: $text-grey;
+						font-family: $inter;
+						font-size: 0.8rem;
+					}
+				}
+
+				.linkContainer2 {
+					text-align: center;
+					.linkHide {
+						display: none;
+					}
+				}
+
+				.linkContainer3 {
+					text-align: right;
+				}
+			}
+		}
+	}
+}

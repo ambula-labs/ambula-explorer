@@ -1,0 +1,666 @@
+.Product {
+	padding: 0 5% 0 5%;
+	.cryptoHeader {
+		height: 20lvh;
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		font-family: $poppins;
+
+		.leftHeader {
+			width: 60%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			.titleHeader {
+				color: $text-grey;
+				font-size: 0.7rem;
+			}
+
+			.informationHeader {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: 85%;
+
+				.ambulaLogoSmall {
+					width: 11%;
+					padding-bottom: 12%;
+					background-color: $background-dark;
+					padding: 3%;
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+
+					img {
+						width: 75%;
+					}
+				}
+
+				.informationContainer {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					margin-left: 20px;
+					color: #fff;
+					.informationTitle {
+						font-size: 2rem;
+						line-height: 1;
+					}
+					.informationContent {
+						font-size: 3rem;
+						line-height: 1;
+						display: flex;
+						flex-direction: row;
+						gap: 3px;
+
+						.progress {
+							display: flex;
+							gap: 2px;
+							font-size: 1.1rem;
+							color: #27c05c;
+						}
+					}
+				}
+			}
+		}
+
+		.rightHeader {
+			display: flex;
+			align-items: center;
+			justify-content: right;
+			width: 40%;
+
+			.pub {
+				width: 70%;
+				height: 70%;
+				background-color: #d9d9d9;
+				border-radius: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+				font-weight: 500;
+				text-align: center;
+			}
+		}
+	}
+
+	.cryptoStats {
+		height: 60lvh;
+		z-index: 5;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.statsBar {
+			height: 16%;
+			width: 96%;
+			padding: 1% 2%;
+			position: relative;
+			border-radius: 25px;
+			border: 2px solid transparent;
+			background: $gradient-white-red border-box;
+			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+		}
+
+		.statsBarBackground {
+			position: absolute;
+			height: 16%;
+			font-family: $poppins;
+			width: 96%;
+			padding: 1% 2%;
+			border: 2px solid transparent;
+			border-radius: 25px;
+			background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #ffffff 100%);
+			backdrop-filter: blur(20px);
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+
+			.statsContainer {
+				color: white;
+
+				.statsTitle {
+					font-size: 0.8rem;
+				}
+
+				.statsContent {
+					font-size: 1.3rem;
+					font-weight: 500;
+
+					span {
+						color: $ambula-red;
+					}
+				}
+
+				.statsProgress {
+					font-size: 0.9rem;
+				}
+
+				.up {
+					color: #27c05c;
+				}
+
+				.down {
+					color: #eb3d3d;
+				}
+
+				.amb {
+					color: $ambula-red;
+				}
+			}
+		}
+
+		.statsBottom {
+			height: 75%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			font-family: $poppins;
+			gap: 20px;
+
+			.statsOrder {
+				width: 25%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+
+				.orderTitle {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					font-size: 1rem;
+					margin-bottom: 2%;
+					color: white;
+
+					span {
+						color: $text-grey;
+						font-size: 0.7rem;
+					}
+				}
+
+				.hr {
+					height: 2px;
+					width: 100%;
+					border: 50px;
+					background-color: $text-grey;
+					margin-bottom: 6%;
+				}
+
+				.tradingContainer {
+					display: flex;
+					flex-direction: column;
+					color: white;
+					gap: 5px;
+					height: 70%;
+					font-size: 0.9rem;
+
+					.orderCardContainer {
+						display: flex;
+						flex-direction: column;
+						gap: 10%;
+						height: 45%;
+
+						.orderCard {
+							background: #d9d9d9;
+							border-radius: 10px;
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							height: 40%;
+							padding: 1%;
+
+							.orderCardLeft {
+								display: flex;
+								flex-direction: row;
+								width: 70%;
+								gap: 5px;
+								font-family: $inter;
+
+								.orderCardImage {
+									height: 100%;
+									padding-left: 30%;
+									position: relative;
+									background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #111111;
+									border-radius: 10px;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									overflow: hidden;
+
+									& > * {
+										position: absolute;
+										top: 50%;
+										left: 50%;
+										transform: translate(-50%, -50%);
+									}
+									img {
+										height: 70%;
+										z-index: 3;
+									}
+
+									.lightCard {
+										position: absolute;
+										z-index: 2;
+										top: 30%;
+										right: 50%;
+										height: 100lvh;
+										background: #9807f8;
+										transform: none;
+										filter: blur(30px);
+									}
+
+									.amb {
+										background: #ff0651ee;
+									}
+								}
+
+								.orderInfos {
+									display: flex;
+									justify-content: center;
+									flex-direction: column;
+
+									.orderType {
+										color: $background-black;
+										font-size: 0.7rem;
+										font-weight: 400;
+									}
+
+									.orderName {
+										color: #dd1cfc;
+										font-weight: 700;
+									}
+
+									.amb {
+										background: linear-gradient(180deg, #ff0651 0%, #ec1093 100%);
+										-webkit-background-clip: text;
+										-webkit-text-fill-color: transparent;
+									}
+								}
+							}
+
+							.orderCardRight {
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								padding-right: 5%;
+								text-align: end;
+								gap: 1px;
+
+								.orderNumber {
+									font-size: 1.2rem;
+									line-height: 1;
+									color: $background-black;
+									font-weight: 500;
+								}
+
+								.orderNumberDollar {
+									font-size: 0.6rem;
+									line-height: 1;
+									color: $grey;
+								}
+							}
+						}
+					}
+
+					.marketPriceContainer {
+						margin-top: 2%;
+						height: 25%;
+						display: flex;
+						flex-direction: column;
+						gap: 10px;
+
+						.marketPriceCard {
+							height: 55%;
+							background: linear-gradient(0deg, rgba(255, 6, 81, 0.2), rgba(255, 6, 81, 0.2)), #111111;
+							display: flex;
+							flex-direction: row;
+							font-family: $poppins;
+							position: relative;
+							overflow: hidden;
+							font-size: 0.9rem;
+							font-weight: 400;
+							padding: 0% 5%;
+							border-radius: 10px;
+							justify-content: space-between;
+							align-items: center;
+
+							span {
+								font-size: 1rem;
+							}
+
+							.marketPriceLight {
+								position: absolute;
+								right: -45vw;
+								width: 100vw;
+							}
+						}
+						.marketPriceSelect {
+							line-height: 1;
+							color: $text-grey;
+							font-weight: 500;
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							gap: 5px;
+							font-size: 0.8rem;
+						}
+					}
+					.totalFeeContainer {
+						margin-top: 5%;
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						font-weight: 500;
+						font-size: 1.1rem;
+
+						.fee {
+							margin-right: 2%;
+							font-weight: 400;
+							font-size: 0.9rem;
+							display: flex;
+							flex-direction: row;
+							gap: 5px;
+
+							.faAnglesDown {
+								color: $ambula-red;
+							}
+						}
+					}
+				}
+
+				.createOrderBtn {
+					margin-top: 5%;
+					color: $background-grey;
+					font-family: $poppins;
+					font-weight: 500;
+					font-size: 1.5rem;
+					height: 12%;
+					outline: none;
+					border: none;
+					background: linear-gradient(180deg, #ff0651 0%, #ec1093 100%);
+					border-radius: 10px;
+				}
+			}
+
+			.peerStats {
+				width: 75%;
+				position: relative;
+
+				.peerStatsBorder {
+					height: 100%;
+					width: 100%;
+					z-index: 6;
+					position: relative;
+					border-radius: 25px;
+					border: 2px solid transparent;
+					background: $gradient-white-red border-box;
+					-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+					-webkit-mask-composite: xor;
+					mask-composite: exclude;
+				}
+
+				.peerStatsBackground {
+					position: absolute;
+					height: 96%;
+					font-family: $poppins;
+					width: 96%;
+					padding: 1% 2%;
+					z-index: 5;
+					border: 2px solid transparent;
+					border-radius: 25px;
+					background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 99.99%, rgba(255, 255, 255, 0.25) 100%, rgba(17, 17, 17, 0.25) 100%, #ffffff 100%);
+					backdrop-filter: blur(20px);
+					align-items: center;
+					display: flex;
+					flex-direction: column;
+					gap: 10px;
+
+					.peerStatsTop {
+						display: flex;
+						flex-direction: row;
+						width: 96%;
+						padding: 0 2%;
+
+						.peerStatsTopCardsLeft {
+							display: flex;
+							flex-direction: row;
+							gap: 10%;
+							width: 50%;
+						}
+
+						.peerStatsTopCardsRight {
+							display: flex;
+							flex-direction: row;
+							justify-content: flex-end;
+							gap: 10%;
+							width: 50%;
+						}
+
+						.peerStatsTopCard {
+							display: flex;
+							flex-direction: column;
+							align-items: flex-end;
+
+							.peerStatsTopCardTitle {
+								color: $text-grey;
+								font-size: 0.8rem;
+							}
+
+							.peerStatsTopCardContent {
+								font-size: 1.3rem;
+								color: white;
+
+								span {
+									font-size: 1.2rem;
+									color: $ambula-red;
+								}
+							}
+						}
+					}
+
+					.peerStatsMiddle {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						width: 96%;
+						padding: 0 2%;
+
+						.peerStatsMiddleConnectedPeer {
+							width: 50%;
+							font-weight: 500;
+							font-size: 1.4rem;
+							background: linear-gradient(180deg, #ff0651 0%, #ec1093 100%);
+							-webkit-background-clip: text;
+							-webkit-text-fill-color: transparent;
+						}
+
+						.peerStatsMiddleBestHash {
+							color: $text-grey;
+							text-align: left;
+							width: 30%;
+						}
+
+						.peerStatsMiddleBeshNumber {
+							color: $text-grey;
+							width: 20%;
+							text-align: right;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.blockTransactionContainer {
+		height: 80lvh;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		margin-top: 30px;
+		margin-bottom: 50px;
+
+		.blockTransactionWrapper {
+			width: 48%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			.title {
+				height: 5%;
+				display: flex;
+				align-items: center;
+				font-family: $inter;
+				font-weight: 700;
+				color: white;
+				font-size: 1.3rem;
+			}
+
+			.seeAll {
+				height: 5%;
+				text-align: center;
+				font-family: $inter;
+				font-weight: 700;
+				color: white;
+				span {
+					color: $ambula-red;
+				}
+			}
+		}
+	}
+
+	.light {
+		position: absolute;
+		z-index: 2;
+		top: 10%;
+		right: -10%;
+		height: 100lvh;
+		background: #ff06515e;
+		width: 80%;
+		filter: blur(300px);
+	}
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+	.backdrop-blur {
+		background-color: rgba(255, 255, 255, 0.5);
+		-webkit-backdrop-filter: blur(2em);
+		backdrop-filter: blur(2em);
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.Product {
+		.cryptoHeader {
+			height: 10lvh;
+			width: 100%;
+			margin-bottom: 2lvh;
+
+			.leftHeader {
+				width: 100%;
+
+				.titleHeader {
+					color: $text-grey;
+					font-size: 0.7rem;
+				}
+
+				.informationHeader {
+					width: 100%;
+
+					.informationContainer {
+						.informationTitle {
+							font-size: 1.5rem;
+						}
+						.informationContent {
+							font-size: 2rem;
+
+							.progress {
+								font-size: 0.8rem;
+							}
+						}
+					}
+				}
+			}
+
+			.rightHeader {
+				display: none;
+			}
+		}
+
+		.cryptoStats {
+			height: 50lvh;
+			z-index: 5;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			.statsBar {
+				display: none;
+			}
+			.statsBarBackground {
+				display: none;
+			}
+
+			.statsBottom {
+				height: 100%;
+
+				.statsOrder {
+					display: none;
+				}
+
+				.peerStats {
+					width: 100%;
+
+					.peerStatsBackground {
+						height: 98%;
+
+						.peerStatsTop {
+							.peerStatsTopCard {
+								.peerStatsTopCardTitle {
+									font-size: 0.7rem;
+								}
+
+								.peerStatsTopCardContent {
+									font-size: 1.1rem;
+
+									span {
+										font-size: 1rem;
+									}
+								}
+							}
+						}
+
+						.peerStatsMiddle {
+							align-items: center;
+							.peerStatsMiddleConnectedPeer {
+								font-size: 0.9rem;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.blockTransactionContainer {
+			height: 160lvh;
+			flex-direction: column;
+
+			.blockTransactionWrapper {
+				width: 100%;
+				height: 50%;
+			}
+		}
+	}
+}
