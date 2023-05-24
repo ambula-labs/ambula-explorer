@@ -45,12 +45,6 @@ function Admin() {
 			const response = await axios.get("http://139.177.181.107:3000/chain-infos");
 			if (chainStatus !== response.data) {
 				setChainStatus(response.data);
-				if (response.data.status === "online") {
-					const responseNode = await axios.get("http://139.177.181.107:3000/nodes");
-					setPolkadotApi("ws://" + responseNode.data[0].ip + ":9944");
-				} else {
-					setPolkadotApi("wss://rpc.polkadot.io");
-				}
 				setIsFetching(false);
 			}
 		} catch (error) {
@@ -65,7 +59,7 @@ function Admin() {
 			const response = await axios.get("http://139.177.181.107:3000/chain-infos");
 			setChainStatus(response.data);
 			const responseNode = await axios.get("http://139.177.181.107:3000/nodes");
-			setPolkadotApi("ws://" + responseNode.data[0].ip + ":9944");
+			setPolkadotApi("ws://" + responseNode.data[0].ip + ":9945");
 			setIsFetching(false);
 		} catch (error) {
 			console.error("Error fetching data:", error);
@@ -106,9 +100,19 @@ function Admin() {
 	}, []);
 
 	useEffect(() => {
+		const fetchNodeIp = async () => {
+			const responseNode = await axios.get("http://139.177.181.107:3000/nodes");
+			setPolkadotApi("ws://" + responseNode.data[0].ip + ":9945");
+		};
 		if (chainStatus != [] && chainStatus.status != undefined) {
+			if (chainStatus.status === 1) {
+				fetchNodeIp();
+			} else {
+				setPolkadotApi("wss://rpc.polkadot.io");
+			}
 			setIsApiDown(false);
 		} else {
+			setPolkadotApi("wss://rpc.polkadot.io");
 			setIsApiDown(true);
 		}
 	}, [chainStatus]);

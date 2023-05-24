@@ -12,9 +12,9 @@ function App() {
 	const setPolkadotApi = usePolkadotApiStore((state) => state.setWsProvider);
 	const isAdminPage = useAdminParamStore((state) => state.isAdminPage);
 
-	useEffect(() => {
-		setPolkadotApi("wss://rpc.polkadot.io");
-	}, []);
+	// useEffect(() => {
+	// 	setPolkadotApi("wss://rpc.polkadot.io");
+	// }, []);
 
 	return (
 		<div className="App">
