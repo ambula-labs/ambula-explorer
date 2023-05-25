@@ -12,6 +12,7 @@ const usePolkadotApiStore = create(
 				set({
 					loading: true,
 				});
+				console.log(providerAddress);
 				let wsProvider = new WsProvider(providerAddress);
 				let api = await ApiPromise.create({ provider: wsProvider });
 				set({

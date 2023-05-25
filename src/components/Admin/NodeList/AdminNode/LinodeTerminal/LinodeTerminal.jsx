@@ -6,8 +6,11 @@ const LinodeTerminal = ({ ip }) => {
 
 	useEffect(() => {
 		let socketLocal = JSON.parse(localStorage.getItem("websocket" + ip));
-		if (!socketLocal) {
+		console.log(socketLocal);
+		if (!socketLocal || (typeof socketLocal === "object" && Object.keys(socketLocal).length === 0)) {
 			const newSocket = new WebSocket("ws://" + ip + ":8080");
+
+			console.log(newSocket);
 			setSocket(newSocket);
 		} else {
 			setSocket(socketLocal);
